@@ -1,0 +1,101 @@
+// global set navs to row
+nav ul
+{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+
+    li
+    {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        margin-right: 10px;
+    }
+}
+
+// navbar - general
+.header-navbar
+{
+    
+}
+
+// navbar - mobile
+.navbar-toggler,
+.navbar-close
+{
+    @include media(">tablet") {
+        display: none;
+    }
+
+    border: 0;
+    background: transparent;
+
+    color: $offwhite;
+    font-size: rem(28px);
+}
+
+.navbar-close
+{
+    text-align: right;
+    position: absolute;
+
+    // align with menu opener
+    right: 2.5%;
+    top: 7%;
+
+    // adjust size for close only
+    font-size: rem(36px);
+}
+
+.navbar-collapse {
+    @include media("<tablet") {
+        display: none;
+    }
+}
+
+.navbar-primary
+{
+    display: block;
+
+    @include media("<mega") {
+
+        background-color: $brandblue;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 999;
+
+        transform: translateY(-1200px);
+        opacity: 0;
+        transition: 150ms linear all;
+
+        &.open
+        {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        ul {
+            flex-direction: column;
+            padding: 30px;
+        }
+
+        li {
+            display: block;
+            margin-bottom: 30px;
+        }
+
+        a {
+            color: $offwhite;
+            text-decoration: none;
+            font-size: rem(28px);
+        }
+
+    }
+    
+}

@@ -1,0 +1,71 @@
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+h1 {
+    @apply text-2xl;
+}
+h2 {
+    @apply text-xl;
+}
+h3 {
+    @apply text-lg;
+}
+.content a:not(.button) {
+    @apply text-blue-600 underline;
+}
+
+p {
+    @apply mb-2;
+}
+
+// sticky footer with tailwind
+// https://dev.to/timosville/sticky-footer-using-tailwind-css-225p
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+  
+main {
+    flex: 1; /* Or flex-grow: 1;*/
+}
+  
+
+/*
+// Fonts -- todo move to html for perf
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville');
+
+// vendor
+@import '~reset-css/sass/_reset.scss';
+@import '~include-media/dist/_include-media.scss';
+@import '~sass-rem/_rem.scss';
+
+// helpers
+@import 'vendor'; // adjustments to any vendor libraries are made here
+@import 'variables'; // variables are here
+@import 'mixins'; // mixins, functions, etc. are here
+
+// core structure
+@import 'typography';
+@import 'structure';
+@import 'header';
+@import 'footer';
+@import 'nav';
+@import 'button';
+
+//pages and modules
+@import 'home';
+@import 'business-list';
+@import 'auth';
+@import 'admin';
+@import 'forms'; 
+*/

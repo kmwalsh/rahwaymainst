@@ -1,0 +1,171 @@
+// header for form
+.business-form-header-buttons
+{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: flex-start;
+
+    margin: 10px 0;
+}
+
+//back end business list/business forms
+.status-button,
+.admin-button
+{
+    background: #ccc;
+    color: #444;
+    padding: 3px;
+    margin: 0;
+    border: 1px solid #a1a1a1;
+    border-radius: 2px;
+
+    font-size: rem(12px);
+    font-family: 'Source Sans Pro', sans-serif;
+    text-transform: uppercase;
+    margin-right: 3px;
+
+    i.fa
+    {
+        margin-right: 3px;
+    }
+}
+
+.status-button
+{
+    &.pending
+    {
+        background-color: #fffbeb;
+        color: #947600;
+        border-color: #947600;
+    }
+
+    &.approved
+    {
+        background-color: #effaf3;
+        color: #257942;
+        border-color: #257942;
+    }
+}
+
+// basic inputs
+textarea,
+input
+{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: rem(18px);
+    color: #666;
+    padding: 2px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+
+    transition: 100ms linear all;
+
+    &:active, &:focus
+    {
+        border-color: $charcoal;
+        color: $charcoal;
+    }
+}
+
+textarea
+{
+    min-height: 100px;
+}
+
+// form itself
+.business-form
+{
+    margin-bottom: 20px;
+    border: 1px solid $brandblue;
+    padding: 20px;
+    
+    label 
+    {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+
+    fieldset
+    {
+        margin-bottom: 10px;
+    }
+
+    input, textarea
+    {
+        width: 60%;
+    }
+
+    .form-label
+    {
+        width: 35%;
+    }
+
+    .form-description
+    {
+        width: 60%;
+        margin-left: 39%;
+        font-size: rem(14px);
+        font-style: italic;
+        opacity: .7;
+        margin-top: 4px;
+    }
+
+    .button
+    {
+        margin: 0;
+        font-size: rem(18px);
+    }
+}
+
+.required
+{
+    font-weight: bold;
+    color: red;
+}
+
+.business-form-logo-image
+{
+    max-width: 300px;
+}
+
+.business-form-logo
+{
+    border: 1px solid #ccc;
+    background: $offwhite;
+    padding: 20px;
+    margin-bottom: 20px;
+    
+    label {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 5px 0 0 0;
+    }
+}
+
+.business-form-logo-upload
+{
+}
+
+//hours field
+.business-form-hours
+{
+    textarea
+    {
+        height: 250px;
+    }
+}
+
+.business-form-subheader
+{
+    color: $brandblue;
+    font-weight: bold;
+    font-size: rem(18px);
+    font-family: 'Source Sans Pro', sans-serif;
+    margin-bottom: 15px;
+}

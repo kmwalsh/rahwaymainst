@@ -1,0 +1,31 @@
+// HEADER AREA
+.header
+{
+    background: $brandblue;
+    color: $offwhite;
+}
+
+.header-container
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+// branding sections
+.branding-name
+{
+    font-size: rem(28px);
+    margin-bottom: 5px;
+
+    a {
+        color: $offwhite;
+        text-decoration: none;
+    }
+}
+
+.branding-tagline
+{
+    font-size: rem(14px);
+    font-family: 'Source Sans Pro', sans-serif;
+}
