@@ -25,7 +25,7 @@
     <meta name="description" content="@yield('description')">
 
     <!-- Branding -->
-    <link rel="icon" type="image/png" sizes="16x16" href="/storage/favicon.png?v=2">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('img/favicon.png') }}?v=3">
     <meta property="og:title" content="Rahway Main St. - @yield('title')">
     <meta property="og:site_name" content="Rahway Main St.">
     <meta property="og:url" content="{{ url()->current() }}">
