@@ -23,7 +23,10 @@
         <label>
             <span class="form-label">Description<span class="form-required">*</span></span>
             <textarea maxlength="255" class="js-count-text form-input" name="description"></textarea>
-            <span class="form-count-characters js-count-characters"><span class="counter">0</span>/<span class="maxlength">0</span></span>
+            <span class="form-count-characters js-count-characters">
+                    <span class="counter">0</span>/<span class="maxlength">0</span>
+                    <span class="counter-error"></span>
+            </span>
         </label>
     </fieldset>
     <section class="form-grid">
@@ -48,7 +51,10 @@
         <label>
             <span class="form-label">Hours (COVID-19 Special Hours, Office Procedures, Etc.)<span class="form-required">*</span></span>
             <textarea maxlength="1000" class="js-count-text h-32 form-input" name="hours"></textarea>
-            <span class="form-count-characters text-xs js-count-characters"><span class="counter">0</span>/<span class="maxlength">0</span></span>
+            <span class="form-count-characters text-xs js-count-characters">
+                <span class="counter">0</span>/<span class="maxlength">0</span>
+                <span class="counter-error"></span>
+            </span>
         </label>
     </fieldset>
     <fieldset>
