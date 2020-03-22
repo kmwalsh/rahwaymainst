@@ -50,7 +50,7 @@ class BusinessController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required|max:255',
             'description' => 'required|max:255',
-            'phone' => 'required|max:12',
+            'phone' => 'required|max:20',
             'hours' => 'required|max:1000',
             'address' => 'required|max:255',
         ]);
@@ -102,7 +102,7 @@ class BusinessController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required|max:255',
             'description' => 'required|max:255',
-            'phone' => 'required|max:12',
+            'phone' => 'required|max:20',
             'hours' => 'required|max:1000',
             'address' => 'required|max:255',
         ]);
@@ -114,7 +114,6 @@ class BusinessController extends Controller
         }
         
         // HERE MUST GET BUSINESS THAT WE ARE UPDATING
-        //$business = new Business;
         $business = Business::where('id',$request->id)->first();
 
         // now we update that business
