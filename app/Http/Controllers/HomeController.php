@@ -23,7 +23,7 @@ class HomeController extends Controller {
     {
         
         if ( $request->user()['role'] === 'admin' ) {
-            $businesses = Business::orderBy('created_at', 'asc')->get();
+            $businesses = Business::orderBy('created_at', 'desc')->get();
             return view('home', [
                 'businesses' => $businesses,
                 'superadmin' => true,

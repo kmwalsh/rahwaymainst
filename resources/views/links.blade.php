@@ -21,6 +21,12 @@
 <li><a href="https://rennamedia.com/publications/our-town-rahway/">Our Town Rahway</a></li>
 </ul>
 
+<h2>Business Groups</h2>
+<ul>
+    <li><a href="https://www.rahwaychamberofcommerce.com/">Rahway Chamber of Commerce</a></li>
+    <li><a href="https://rahwayishappening.com/">Rahway Arts and Business Partnership</a></li>
+</ul>
+
 <h2>Online Groups</h2>
 <ul>
 <li><a href="https://www.meetup.com/Rawtech-Meetup/">Rawtech Meetup</a></li>
@@ -34,10 +40,8 @@
 <li><a href="https://groups.freecycle.org/group/RahwayNJ/posts/all">Rahway Freecycle</a></li>
 </ul>
 
-<h2>Miscellaneous</h2>
+<h2>Assistance</h2>
 <ul>
-<li><a href="https://www.rahwaychamberofcommerce.com/">Rahway Chamber of Commerce</a></li>
-<li><a href="https://rahwayishappening.com/">Rahway Arts and Business Partnership</a></li>
 <li><a href="https://www.rahwayfoodforfriendsnj.org/">Rahway Food for Friends</a></li>
 </ul>
     

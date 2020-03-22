@@ -8,14 +8,16 @@
 
 <section class="home-hero">
     <div class="container mx-auto">
-        <div class="home-hero-content">
-            <h2>Rahway Main St.</h2>
-            <p>Rahway Main St. is a "digital main street" for Rahway, New Jersey. It was created in response to the COVID-19 outbreak. Rahway citizens can easily discover changes to business hours, church services, and more. Help support your local businesses in these strange times.</p>
+        <div class="h-64 flex content-center justify-center flex-col">
+            <div>
+                <h2 class="text-4xl font-semibold">Rahway Main St.</h2>
+                <p class="text-xl text-gray-800 mb-5">Rahway Main St. is a "digital main street" for Rahway, New Jersey. It was created in response to the COVID-19 outbreak. Rahway citizens can easily discover changes to business hours, church services, and more. Help support your local businesses in these strange times.</p>
 
-            <a class="button" href="#business-list">Walk Down Rahway Main St.</a>
-            @guest                
-                <a class="button" href="/register">Open on Rahway Main St.</a>
-            @endguest
+                <a class="button inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" href="#business-list">Walk Down Rahway Main St.</a>
+                @guest                
+                    <a class="button inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" href="/register">Open on Rahway Main St.</a>
+                @endguest
+            </div>
         </div>
     </div>
 </section>

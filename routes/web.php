@@ -22,6 +22,30 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('terms', function () {
+    return view('terms');
+});
+
+Route::get('privacy', function () {
+    return view('privacy');
+});
+
+
+Route::get('links', function () {
+    return view('links');
+});
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+// create
+Route::get('/create', 'BusinessController@createBusiness')->name('create');
+Route::post('/create', 'BusinessController@makeBusiness')->name('create');
+
+// update
+Route::post('/update/{id}', 'BusinessController@updateBusiness')->name('update');
+Route::post('/status/{id}', 'BusinessController@changeBusinessStatus')->name('status');
+
+// Authentication Routes...
 Route::get('login', function () {
     return view('login');
 });
@@ -30,17 +54,6 @@ Route::get('register', function () {
     return view('register');
 });
 
-Route::get('terms', function () {
-    return view('terms');
-});
-
-Route::get('links', function () {
-    return view('links');
-});
-
-Route::post('/create-business', 'BusinessController@makeBusiness');
-
-// Authentication Routes...
 Route::get('auth/login', 'Auth\LoginController@getLogin');
 Route::post('auth/login', 'Auth\LoginController@postLogin');
 Route::get('auth/logout', 'Auth\LoginController@getLogout');
@@ -50,8 +63,3 @@ Route::get('auth/register', 'Auth\RegisterController@getRegister');
 Route::post('auth/register', 'Auth\RegisterController@postRegister');
 
 Auth::routes(['verify' => true]);
-
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/create', 'BusinessController@createBusiness')->name('create');
-Route::post('/update/{id}', 'BusinessController@updateBusiness')->name('update');
-Route::post('/status/{id}', 'BusinessController@changeBusinessStatus')->name('status');

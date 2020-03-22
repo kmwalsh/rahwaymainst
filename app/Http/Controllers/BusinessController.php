@@ -49,8 +49,9 @@ class BusinessController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required|max:255',
-            'email' => 'required|max:255',
             'description' => 'required|max:500',
+            'phone' => 'required|max:500',
+            'hours' => 'required|max:1000',
             'address' => 'required|max:255',
         ]);
     
@@ -62,7 +63,7 @@ class BusinessController extends Controller
         
         $business = new Business;
         $business->name = $request->name;
-        $business->email = $request->email;
+        $business->email = $request->user()->email;
         $business->description = $request->description;
         $business->address = $request->address;
 
@@ -96,12 +97,13 @@ class BusinessController extends Controller
         return redirect('/home');
     }
 
-    public function updateBusiness(Request $request, $id)
+    public function updateBusiness(Request $request)
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required|max:255',
-            'email' => 'required|max:255',
             'description' => 'required|max:500',
+            'phone' => 'required|max:500',
+            'hours' => 'required|max:1000',
             'address' => 'required|max:255',
         ]);
     

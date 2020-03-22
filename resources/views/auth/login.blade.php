@@ -5,7 +5,7 @@
 <form method="POST" class="w-full max-w-md mx-auto bg-white shadow-md border border-gray-200 rounded px-8 pt-6 pb-8 mb-4" action="{{ route('login') }}">
     @csrf
 
-    <h2 class="text-gray-900 text-2xl mb-3 font-light">{{ __('Login to Rahway Main St.') }}</h2>
+    <h2 class="text-gray-900 text-2xl mb-3 mt-0 font-light">{{ __('Login to Rahway Main St.') }}</h2>
     <div class="form-group row">
         <label for="email" class="block text-gray-700 text-sm font-bold mb-2">{{ __('E-Mail Address') }}</label>
 

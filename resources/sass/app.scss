@@ -9,35 +9,81 @@
 
 @tailwind utilities;
 
-h1 {
-    @apply text-2xl;
-}
-h2 {
-    @apply text-xl;
-}
-h3 {
-    @apply text-lg;
-}
-.content a:not(.button) {
-    @apply text-blue-600 underline;
+html {
+    scroll-behavior: smooth;
 }
 
-p {
-    @apply mb-2;
-}
-
-// sticky footer with tailwind
-// https://dev.to/timosville/sticky-footer-using-tailwind-css-225p
 body {
+    
+    // sticky footer with tailwind
+    // https://dev.to/timosville/sticky-footer-using-tailwind-css-225p
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+
+    // js no scroll class
+    &.no-scroll
+    {
+        overflow-y: hidden;
+    }
 }
   
-main {
+main 
+{
+    // sticky footer with tailwind
     flex: 1; /* Or flex-grow: 1;*/
+
+    // global typography styles for body content text
+    h1 {
+        @apply text-3xl mb-2;
+    }
+    
+    h2 {
+        @apply text-2xl mb-2 mt-10;
+    }
+    
+    h3 {
+        @apply text-xl mb-2 mt-10;
+    }
+    
+    .content a:not(.button) {
+        @apply text-blue-600 underline;
+    }
+    
+    p {
+        @apply mb-2;
+    }
+    
+    ul {
+        @apply list-disc list-inside mb-2;
+    }
 }
-  
+
+.alert-success {
+
+    @apply block border-green-600 bg-green-200 text-green-800 p-2 text-xs mt-2 rounded;
+}
+
+.alert-danger,
+.invalid-feedback
+{
+    @apply block border-red-600 bg-red-200 text-red-800 p-2 text-xs mt-2 rounded;
+}
+
+.is-invalid
+{
+}
+
+.page-404
+{
+    h1 {
+        @apply text-5xl font-bold;
+    }
+
+    p {
+        @apply text-xl;
+    }
+}
 
 /*
 // Fonts -- todo move to html for perf
