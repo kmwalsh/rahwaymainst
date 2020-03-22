@@ -3,81 +3,71 @@
 @section('content')
 <div class="container mx-auto">
 
-<div class="lg:grid lg:grid-cols-3 lg:gap-10">
-<section class="lg:col-span-1">
-    <form method="POST" class="w-full max-w-md mx-auto bg-white shadow-md border border-gray-200 rounded px-8 pt-6 pb-8 mb-4" action="{{ route('register') }}">
+<div class="register-grid">
+<section class="register-grid-form">
+    <form method="POST" class="form-wrapper" action="{{ route('register') }}">
         @csrf
 
-        <h2 class="text-gray-900 text-2xl font-light mb-2 mt-0">{{ __('Register for Rahway Main St.') }}</h2>
+        <h2 class="form-header">{{ __('Register for Rahway Main St.') }}</h2>
 
-        <div class="form-group row">
-            <label for="name" class="block text-gray-700 text-sm font-bold mb-2">{{ __('Name') }}</label>
 
-            <div class="mb-4">
-                <input id="name" type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+        <fieldset>
+            <label for="name" class="form-label">{{ __('Name') }}</label>
+            <input id="name" type="text" class="form-input @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
-                @error('name')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-            </div>
-        </div>
+            @error('name')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
+        </fieldset>
 
-        <div class="form-group row">
-            <label for="email" class="block text-gray-700 text-sm font-bold mb-2">{{ __('E-Mail Address') }}</label>
+        <fieldset>
+            <label for="email" class="form-label">{{ __('E-Mail Address') }}</label>
+            <input id="email" type="email" class="form-input @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
-            <div class="mb-4">
-                <input id="email" type="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+            @error('email')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
+            
+            <p class="form-description mb-0">Use a valid e-mail address &mdash; accounts must be validated.</p>
+        </fieldset>
 
-                @error('email')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-                
-                <p class="text-gray-700 text-xs mb-3 mt-1">Use a valid e-mail address &mdash; accounts must be validated.</p>
-            </div>
-        </div>
+        <fieldset>
+            <label for="password" class="form-label">{{ __('Password') }}</label>
+            <input id="password" type="password" class="form-input @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
-        <div class="form-group row">
-            <label for="password" class="block text-gray-700 text-sm font-bold mb-2">{{ __('Password') }}</label>
+            @error('password')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
+        </fieldset>
 
-            <div class="mb-4">
-                <input id="password" type="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+        <fieldset>
+            <label for="password-confirm" class="form-label">{{ __('Confirm Password') }}</label>
 
-                @error('password')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-            </div>
-        </div>
+            <input id="password-confirm" type="password" class="form-input focus:shadow-outline @error('password') is-invalid @enderror" name="password_confirmation" required autocomplete="new-password">
+        </fieldset>
 
-        <div class="form-group row">
-            <label for="password-confirm" class="block text-gray-700 text-sm font-bold mb-2">{{ __('Confirm Password') }}</label>
-
-            <div class="mb-4">
-                <input id="password-confirm" type="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline @error('password') is-invalid @enderror" name="password_confirmation" required autocomplete="new-password">
-            </div>
-        </div>
-
-        <div class="form-group row mb-0">
-            <div class="col-md-6 offset-md-4">
-                <button type="submit" class="button bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-                    {{ __('Register') }}
-                </button>
-            </div>
-        </div>
+        <fieldset>
+            <button type="submit" class="button form-button">
+                {{ __('Register') }}
+            </button>
+        </fieldset>
     </form>
 </section>
-<section class="lg:col-span-2">
-    <h1 class="text-4xl mb-4">{{ __('Open on Rahway Main St.') }}</h1>
-    <p class="text-xl mb-8">Are you a Rahway business owner, freelancer, contractor, organization, or other public institution? List yourself on Main Street Rahway!</p>
+<section class="register-grid-info">
+    <h1 class="rms-header">{{ __('Open on Rahway Main St.') }}</h1>
+    <section class="rms-content">
+        <p>Are you a Rahway business owner, freelancer, contractor, organization, or other public institution? List yourself on Main Street Rahway!</p>
 
-    <p class="text-xl mb-8">Any Rahway-based public institution, business, freelancer, church, contractor, landscaper, government organization, office, restaurant, park, etc. may register to join. If you are located in Rahway and you provide a public service or you own a business &mdash; you are welcome to join.</p>
+        <p>Any Rahway-based public institution, business, freelancer, church, contractor, landscaper, government organization, office, restaurant, park, etc. may register to join. If you are located in Rahway and you provide a public service or you own a business &mdash; you are welcome to join.</p>
 
-    <p class="text-xl">Joining is completely free. It was created by a Rahway citizen to give back to the community!</p>
+        <p>Joining is completely free. It was created by a Rahway citizen to give back to the community!</p>
+    </section>
 </section>
 
 </div>

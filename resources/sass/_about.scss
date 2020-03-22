@@ -1,0 +1,22 @@
+@include media(">=1024px")
+{
+    .rms-about
+    {
+        @apply grid grid-cols-2 gap-10;
+    }
+
+    .rms-contact
+    {
+        @apply flex justify-end;
+    }
+}
+
+.rms-header
+{
+    @apply font-hairline uppercase text-3xl;
+}
+
+.rms-content
+{
+    @apply text-2xl font-hairline;
+}

@@ -1,0 +1,31 @@
+// search page
+.search-input 
+{
+    input 
+    {
+        @apply shadow-lg border border-gray-200 rounded-md p-5 mb-10 text-xl font-hairline;
+    }
+
+    button
+    {
+        margin-left: 15px;
+        font-size: 28px;
+        @apply text-gray-700;
+    }
+}
+
+.search-home
+{
+    position: relative;
+
+    input 
+    {
+        width: 100%;
+    }
+
+    button {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+}

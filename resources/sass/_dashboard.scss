@@ -1,0 +1,33 @@
+.dashboard-business-list
+{
+    .dashboard-business-name
+    {
+        @apply text-2xl font-semibold mt-0 mb-3 mt-0;
+    }
+    
+}
+
+.dashboard-business-header
+{
+    @apply flex flex-row justify-between justify-start mb-2;
+}
+
+.dashboard-button 
+{
+    @apply border p-1 pr-2 pl-2 mr-1 rounded border-green-600 text-sm font-bold uppercase text-green-600 bg-green-100;
+
+    &.admin
+    {
+        @apply border p-1 pr-2 pl-2 inline-block rounded border-gray-500 text-sm font-bold uppercase text-gray-500 bg-gray-100;
+    }
+
+    &.pending
+    {
+        @apply border p-1 pr-2 pl-2 mr-1 rounded-sm border-yellow-600 text-sm font-hairline uppercase text-yellow-600 bg-yellow-100;
+    }
+}
+
+.dashboard-business-form
+{
+    @apply max-w-none bg-transparent shadow-none border-none px-0 pt-0 pb-0 mb-0 mt-0 mb-0;
+}

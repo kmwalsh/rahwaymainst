@@ -19,6 +19,19 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <!-- meta -->
+    <meta name="title" content="Rahway Main St. - @yield('title')">
+    <meta name="description" content="@yield('description')">
+
+    <!-- Branding -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/storage/favicon.png?v=2">
+    <meta property="og:title" content="Rahway Main St. - @yield('title')">
+    <meta property="og:site_name" content="Rahway Main St.">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:description" content="@yield('description')">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="">
 </head>
 <body class="site flex flex-col min-h-screen">
     <header class="flex items-center justify-between flex-wrap bg-teal-500 p-6">
@@ -68,11 +81,19 @@
         </div>
     </header>
 
-    <main class="content mb-10 mt-10 flex-grow">
-        <div class="container mx-auto">
-            @yield('content')
-        </div>
-    </main>
+    @if (Request::is('/'))
+        <main class="content mb-10 flex-grow home-content">
+            <div class="container mx-auto">
+                @yield('content')
+            </div>
+        </main>
+    @else
+        <main class="content mb-10 mt-10 flex-grow">
+            <div class="container mx-auto">
+                @yield('content')
+            </div>
+        </main>
+    @endif
 
     <footer class="flex items-center justify-between flex-wrap bg-teal-900 p-8 mt-10">
 
@@ -97,14 +118,15 @@
                             @endif
                         @endguest
                         <li class="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-teal-100 mr-4"><a href="/links">Rahway Links</a></li>
-                        <li class="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-teal-100 mr-4"><a href="mailto:kmw@katemwalsh.com">Contact</a></li>
+                        <li class="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-teal-100 mr-4"><a href="/about">About &amp; Contact</a></li>
                     </ul>
                 </nav>
             </div>
 
             <aside class="text-xs text-gray-500 mt-2">
                 <p>&copy; <?php echo date('Y'); ?> Rahway Main St. All rights reserved. <a href="/terms">Terms of Service</a> | <a href="/privacy">Privacy Policy</a></p>
-                <p>Rahway Main St. is a private entity. Rahway Main St. is not affiliated with the City of Rahway government in any way.</p></aside>
+                <p>Rahway Main St. is a private entity. Rahway Main St. is not affiliated with the City of Rahway government in any way.</p>
+            </aside>
         </div>
     </footer>
 </body>

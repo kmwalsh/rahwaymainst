@@ -2,36 +2,42 @@ html {
     scroll-behavior: smooth;
 }
 
-body 
-{
-    font-family: 'Source Sans Pro', sans-serif;
-    color: $charcoal;
+body {
+    
+    // sticky footer with tailwind
+    // https://dev.to/timosville/sticky-footer-using-tailwind-css-225p
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 
+    // js no scroll class
     &.no-scroll
     {
         overflow-y: hidden;
     }
 }
 
-.container
+main
 {
-    margin: 20px;
-
-    @include media('>mega') {
-        max-width: 1280px;
+    @include media("<=1024px")
+    {
+        max-width: 90%;
         margin: 0 auto;
+
+        &.home-content
+        {
+            max-width: none;
+        }
+
+        .home-content-inner
+        {
+            max-width: 90%;
+            margin: 0 auto;
+        }
     }
 }
 
-.site
+.standard-box
 {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-}
-
-.content
-{
-    flex: 1;
-    margin: 30px 0;
+    @apply shadow-lg border border-gray-200 rounded-md p-5 mb-10;
 }

@@ -1,43 +1,39 @@
-h1,h2,h3,h4,h5,h6 {
-    font-family: 'Libre Baskerville', serif;
-}
-
-h1 {
-    font-size: rem(32px);
-}
-
-h2 {
-    font-size: rem(28px);
-}
-
-h3 {
-   font-size: rem(22px);
-}
-
-b {
-    font-weight: bold;
-}
-
-i {
-    font-style: italic;
-}
-
-p {
-    margin-bottom: 10px;
-}
-
-ul, ol
+main
 {
-    margin: 15px 0 15px 20px;
-    padding-left: 10px;
-    li {
-        list-style-type: disc;
+    a {
+        @apply text-blue-500;
+
+        &:hover, &:focus, &:active
+        {
+            @apply text-blue-900;
+        }
     }
-}
 
-ol
-{
-    li {
-        list-style-type: numeric;
+    // sticky footer with tailwind
+    flex: 1; /* Or flex-grow: 1;*/
+
+    // global typography styles for body content text
+    h1 {
+        @apply text-3xl mb-2;
+    }
+    
+    h2 {
+        @apply text-2xl mb-2 mt-10;
+    }
+    
+    h3 {
+        @apply text-xl mb-2 mt-10;
+    }
+    
+    a:not(.button) {
+        @apply text-blue-600 underline;
+    }
+    
+    p {
+        @apply mb-2;
+    }
+    
+    ul {
+        @apply list-disc list-inside mb-2;
     }
 }

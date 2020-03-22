@@ -126,7 +126,11 @@ for (var i = 0; i < openmodal.length; i++) {
 }
 
 var overlay = document.querySelector('.modal-overlay');
-overlay.addEventListener('click', toggleModal);
+
+if (document.body.contains(overlay)) {
+  overlay.addEventListener('click', toggleModal);
+}
+
 var closemodal = document.querySelectorAll('.modal-close');
 
 for (var i = 0; i < closemodal.length; i++) {
@@ -157,8 +161,34 @@ function toggleModal() {
   modal.classList.toggle('opacity-0');
   modal.classList.toggle('pointer-events-none');
   body.classList.toggle('modal-active');
-  document.body.classList.add('no-scroll');
+  document.body.classList.toggle('no-scroll');
 } //end modal
+//textarea counter
+
+
+var textarea = document.querySelectorAll(".js-count-text");
+textarea.forEach(function (textarea) {
+  var counterEl = textarea.parentNode.querySelector(".js-count-characters");
+  var counter = counterEl.querySelector(".counter");
+  var maxlength = counterEl.querySelector(".maxlength");
+  var counterError = counterEl.querySelector(".counter-error");
+  maxlength.innerHTML = textarea.getAttribute("maxlength");
+  counter.innerHTML = textarea.value.length;
+  textarea.addEventListener("input", function (event) {
+    var target = event.currentTarget;
+    var maxLength = target.getAttribute("maxlength");
+    var currentLength = target.value.length;
+
+    if (currentLength >= maxLength) {
+      counterError.innerHTML = "&mdash; You have reached the maximum number of characters.";
+    } else {
+      counterError.innerHTML = "";
+    }
+
+    counter.innerHTML = currentLength;
+  });
+}); //foreach 
+//
 
 /***/ }),
 

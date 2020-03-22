@@ -1,10 +1,60 @@
+// homepage
 .home-hero
 {
-    min-height: 200px;
+    background-image: url(/storage/rms-header.jpg);
+    background-size: cover;
+    background-position: bottom center;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    
+    @apply flex content-center justify-center flex-col mb-8;
+}
+
+.home-hero-header
+{
+    @apply text-2xl mt-0;
+
+    @include media(">=1024px")
+    {
+        @apply text-5xl;
+    }
+}
+
+.home-hero-content
+{
+    @apply text-lg text-gray-800 mb-8;
+
+    @include media(">=1024px")
+    {
+        @apply text-xl;
+    }
+}
+
+.home-hero-button
+{
+    @apply inline-block bg-blue-500 text-white font-bold py-3 px-6 rounded;
+
+    @include media(">=1024px")
+    {
+        @apply text-xl;
+    }
+
+    &:hover {
+        @apply bg-blue-700 text-white;
+    }
+
+    &:focus {
+        @apply outline-none shadow-outline;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .home-hero
+    {
+        height: 50vh;
+    }
+}
+
+.home-hero-container
+{
+    background-color: rgba(255,255,255,.85);
+    @apply p-8 rounded;
 }

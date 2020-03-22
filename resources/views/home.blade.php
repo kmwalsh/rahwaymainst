@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Rahway Main St.')
+@section('title', 'Dashboard')
 
 @section('content')
 
@@ -15,50 +15,35 @@ You are a super-administrator.
 
 @if (count($businesses) > 0)
 
-<section class="business-form-list" id="business-list">
+<section class="dashboard-business-list" id="business-list">
 <h2 class="mb-2">Your Main St. Rahway Posts</h2>
 
     @foreach ($businesses as $business)
 
-    <h3 class="business-name text-2xl font-semibold mt-0 mb-3">{{ $business->name }}</h3>
+    <section class="standard-box">
 
-    <ul class="flex border-b list-none mb-0">
-        <li class="-mb-px mr-1">
-            <a class="bg-white inline-block border-l border-t border-r rounded-t py-2 px-4 text-blue-700 font-semibold" href="#">Status</a>
-        </li>
-        <li class="mr-1">
-            <a class="bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold" href="#">Post Alert</a>
-        </li>
-        <li class="mr-1">
-        <a class="bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold" href="#">Update Information</a>
-        </li>
-    </ul>
+        <h3 class="dashboard-business-name">{{ $business->name }}</h3>
 
-    <section class="shadow-lg border-l border-r border-b rounded-t-none rounded-md p-5 mt-0 mb-10">
-
-        <header class="business-form-header lg:flex lg:flex-row lg:justify-between">
+        <header class="dashboard-business-header">
+            @if ($business->approved == 1 )
+                <span class="dashboard-button approved"><i class="fa fa-check mr-1"></i> Approved</span>
+            @endif
             
-            <div class="flex flex-row align-start mb-2">
-                @if ($business->approved == 1 )
-                    <span class="border p-1 pr-2 pl-2 mr-1 rounded-sm border-green-600 text-sm font-hairline uppercase text-green-600 bg-green-100 approved"><i class="fa fa-check mr-1"></i> Approved</span>
-                @endif
-                
-                @if( $superadmin )
-                    <form class="border p-1 pr-2 pl-2 inline-block rounded-sm border-gray-600 text-sm font-hairline uppercase text-gray-600 bg-gray-100" method="POST" action="/status/{{$business->id}}">
-                        @csrf
-                        <fieldset>
-                            <button type="submit" class="admin-button button">
-                                <i class="fa fa-plus"></i> Admin: Change Status
-                            </button>
-                        </fieldset>
-                    </form>
-                @endif
-            </div>
+            @if( $superadmin )
+                <form class="dashboard-button admin" method="POST" action="/status/{{$business->id}}">
+                    @csrf
+                    <fieldset>
+                        <button type="submit" class="admin-button button font-bold uppercase">
+                            <i class="fa fa-plus mr-1"></i> Change Status
+                        </button>
+                    </fieldset>
+                </form>
+            @endif
         </header>
         
         @if ($business->approved == 0 )
-            <div class="flex flex-row content-center">
-                <span class="border p-1 pr-2 pl-2 mr-1 rounded-sm border-yellow-600 text-sm font-hairline uppercase text-yellow-600 bg-yellow-100"><i class="fa fa-hourglass mr-1"></i> Pending Approval</span>
+            <div class="flex flex-row content-center mb-3">
+                <span class="dashboard-button pending"><i class="fa fa-hourglass mr-1"></i> Pending Approval</span>
 
                 <p class="mt-0 mb-0 ml-3 text-sm text-gray-500">Pending administrative review. Please allow up to 1-3 business days for approval.</p>
             </div>
@@ -66,18 +51,22 @@ You are a super-administrator.
 
         <!-- Display Validation Errors -->
         @include('common.errors')
-        <form class="business-form business-update-form" method="POST" action="/update/{{$business->id}}" add enctype="multipart/form-data">
+        <form class="form-wrapper dashboard-business-form" method="POST" action="/update/{{$business->id}}" add enctype="multipart/form-data">
         
         @csrf
 
-        <fieldset class="mb-4 mt-4">
+        <fieldset>
             <label for="name"><span class="block text-gray-700 text-sm font-bold mb-2">Name<span class="text-red-600">*</span></span>
                 <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" text-red-600 type="text" name="name" value="{{ $business->name }}">
             </label>
         </fieldset>
-        <fieldset class="mb-4 mt-4">
+        <fieldset>
             <label for="description"><span class="block text-gray-700 text-sm font-bold mb-2">Description<span class="text-red-600">*</span></span>
-                <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  text-red-600 name="description">{{ $business->description }}</textarea>
+                <textarea maxlength="255" class="js-count-text shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  text-red-600 name="description">{{ $business->description }}</textarea>
+                <span class="text-gray-600 text-xs js-count-characters">
+                    <span class="counter">0</span>/<span class="maxlength">0</span>
+                    <span class="counter-error"></span>
+                </span>
             </label>
         </fieldset>
         <section class="lg:grid lg:grid-cols-3 lg:gap-10">
@@ -100,12 +89,16 @@ You are a super-administrator.
         </section>
         <fieldset class="business-form-hours">
             <label for="hours"><span class="block text-gray-700 text-sm font-bold mb-2">COVID-19 Special Procedures (Hours, Office Procedures, Take-Out, Virtual Appointments, Etc.)<span class="text-red-600">*</span></span>
-                <textarea text-red-600 class="shadow h-32 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="hours">{{ $business->hours }}</textarea>
+                <textarea maxlength="1000" class="js-count-text shadow h-32 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="hours">{{ $business->hours }}</textarea>
+                <span class="text-gray-600 text-xs js-count-characters">
+                    <span class="counter">0</span>/<span class="maxlength">0</span>
+                    <span class="counter-error"></span>
+                </span>
             </label>
         </fieldset>
         <section class="bg-gray-100 border border-gray-300 p-2 rounded lg:grid-cols-6 lg:grid lg:gap-3 mt-4 mb-4">
             @if ($business->logo )
-                <a target="_blank" class="modal-open" href="/storage/{{ $business->logo }} "><img class="h-40 opacity-75 rounded lg:col-span-2 hover:opacity-100 transition duration-150 ease-in-out" src="/storage/{{ $business->logo }}" /></a>
+                <a target="_blank" rel="noopener" class="modal-open" href="/storage/{{ $business->logo }} "><img class="h-40 opacity-75 rounded lg:col-span-2 hover:opacity-100 transition duration-150 ease-in-out" src="/storage/{{ $business->logo }}" /></a>
 
                 <div class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center">
                     <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>

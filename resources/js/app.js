@@ -32,7 +32,9 @@ for (var i = 0; i < openmodal.length; i++) {
 }
 
 const overlay = document.querySelector('.modal-overlay')
-overlay.addEventListener('click', toggleModal)
+if ( document.body.contains(overlay)) {
+  overlay.addEventListener('click', toggleModal)
+}
 
 var closemodal = document.querySelectorAll('.modal-close')
 for (var i = 0; i < closemodal.length; i++) {
@@ -62,7 +64,38 @@ function toggleModal () {
   modal.classList.toggle('opacity-0')
   modal.classList.toggle('pointer-events-none')
   body.classList.toggle('modal-active')
-  document.body.classList.add('no-scroll');
+  document.body.classList.toggle('no-scroll');
 }
 
 //end modal
+
+//textarea counter
+const textarea = document.querySelectorAll(".js-count-text");
+
+textarea.forEach(textarea => {
+  const counterEl = textarea.parentNode.querySelector(".js-count-characters");
+  const counter = counterEl.querySelector(".counter");
+  const maxlength = counterEl.querySelector(".maxlength");
+  const counterError = counterEl.querySelector(".counter-error");
+  
+  maxlength.innerHTML = textarea.getAttribute("maxlength");
+  counter.innerHTML = textarea.value.length;
+  
+  textarea.addEventListener("input", event => {
+      const target = event.currentTarget;
+      const maxLength = target.getAttribute("maxlength");
+      const currentLength = target.value.length;
+  
+      if (currentLength >= maxLength) {
+          counterError.innerHTML = "&mdash; You have reached the maximum number of characters.";
+      } else {
+        counterError.innerHTML = "";
+      }
+      counter.innerHTML = currentLength;
+
+  });
+});
+
+//foreach 
+
+//

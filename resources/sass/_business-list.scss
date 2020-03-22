@@ -1,15 +1,78 @@
-// front end business list
-.business-list
+// index page
+.business-logo-wrapper
 {
-    margin: 50px 0;
+    @apply mt-5;
 }
 
-.business-list-businesses
+@include media(">=1024px") 
 {
+    .business-list-grid
+    {
+        @apply grid grid-cols-5 gap-1;
+    }
+
+    .business-list-information
+    {
+        @apply col-span-3;
+    }
+
+    .business-logo-wrapper
+    {
+        @apply mr-10 col-span-2 flex justify-end mt-0;
+    }
 }
 
-.business
+.business-list-name
 {
-    border: 1px solid $brandblue;
-    padding: 20px;
+    @apply mt-0 mb-1 text-3xl;
+}
+
+.business-description
+{
+    @apply mb-4 text-xl font-light;
+}
+
+.business-list-button
+{
+    @apply bg-blue-700 font-light text-white py-2 px-4 rounded;
+
+    &:hover {
+        @apply bg-blue-900 text-white;
+    }
+    &:focus {
+        @apply outline-none shadow-outline;
+    }
+}
+
+.business-location
+{
+    @apply mb-4 text-sm text-gray-700;
+
+    a {
+        @apply text-gray-700;
+    }
+}
+
+.business-hours
+{
+    @apply mt-6;
+}
+
+.business-hours-header
+{
+    @apply text-xl font-light mt-2;
+}
+
+.business-logo-image
+{
+    @apply h-64 opacity-75 rounded transition duration-150 ease-in-out;
+
+    @include media(">=1024px") 
+    {
+        @apply col-span-2;
+    }
+
+    &:hover {
+        @apply opacity-100;
+    }
 }

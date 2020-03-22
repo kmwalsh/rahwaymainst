@@ -1,171 +1,103 @@
-// header for form
-.business-form-header-buttons
+.form-wrapper
 {
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
-    justify-content: flex-start;
+    @apply max-w-lg bg-white shadow-md border border-gray-200 rounded px-8 pt-6 pb-8 mb-4 mt-4 mb-4;
 
-    margin: 10px 0;
-}
-
-//back end business list/business forms
-.status-button,
-.admin-button
-{
-    background: #ccc;
-    color: #444;
-    padding: 3px;
-    margin: 0;
-    border: 1px solid #a1a1a1;
-    border-radius: 2px;
-
-    font-size: rem(12px);
-    font-family: 'Source Sans Pro', sans-serif;
-    text-transform: uppercase;
-    margin-right: 3px;
-
-    i.fa
+    fieldset 
     {
-        margin-right: 3px;
+        @apply mb-4;
     }
 }
 
-.status-button
+.form-header
 {
-    &.pending
-    {
-        background-color: #fffbeb;
-        color: #947600;
-        border-color: #947600;
-    }
-
-    &.approved
-    {
-        background-color: #effaf3;
-        color: #257942;
-        border-color: #257942;
-    }
+    @apply text-gray-900 text-2xl font-light mb-2 mt-0;
 }
 
-// basic inputs
-textarea,
-input
+.form-label
 {
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: rem(18px);
-    color: #666;
-    padding: 2px;
-    border: 1px solid #ccc;
-    border-radius: 2px;
+    @apply block text-gray-700 text-sm font-bold mb-2;
+}
 
-    transition: 100ms linear all;
+.form-input
+{
+    @apply shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight;
 
-    &:active, &:focus
+    &:focus 
     {
-        border-color: $charcoal;
-        color: $charcoal;
+        @apply outline-none shadow-outline;
     }
 }
 
-textarea
+.form-description
 {
-    min-height: 100px;
+    @apply text-gray-700 text-xs mb-0 mt-1;
 }
 
-// form itself
-.business-form
+.form-button
 {
-    margin-bottom: 20px;
-    border: 1px solid $brandblue;
-    padding: 20px;
+    @apply bg-blue-500 text-white font-bold py-2 px-4 rounded;
+
+    &:focus {
+        @apply outline-none shadow-outline;
+    }
+
+    &:hover 
+    {
+        @apply bg-blue-700;
+    }
+
+    .fa {
+        @apply mr-1;
+    }
+}
+
+.form-required
+{
+    @apply text-red-600;
+}
+
+.form-count-characters
+{
+    @apply text-gray-600 text-xs;
+}
+
+@include media(">=1024px")
+{
+    .form-grid
+    {
+        @apply grid grid-cols-3 gap-10;
+    }
+}
+
+// specific pages
+// register page
+.register-no-account-text 
+{
+    @apply mt-5 mb-0 text-xs text-gray-600;
+}
+
+//registration page grid
+@include media(">=1024px")
+{
     
-    label 
+    .register-grid
     {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: flex-start;
-        justify-content: space-between;
-        margin-bottom: 10px;
+        @apply grid grid-cols-3 gap-10;
     }
 
-    fieldset
+    .register-grid-form
     {
-        margin-bottom: 10px;
+        @apply col-span-1;
     }
 
-    input, textarea
+    .register-grid-info
     {
-        width: 60%;
+        @apply col-span-2;
     }
 
-    .form-label
-    {
-        width: 35%;
-    }
+} //media
 
-    .form-description
-    {
-        width: 60%;
-        margin-left: 39%;
-        font-size: rem(14px);
-        font-style: italic;
-        opacity: .7;
-        margin-top: 4px;
-    }
-
-    .button
-    {
-        margin: 0;
-        font-size: rem(18px);
-    }
-}
-
-.required
+.form-create-rms
 {
-    font-weight: bold;
-    color: red;
-}
-
-.business-form-logo-image
-{
-    max-width: 300px;
-}
-
-.business-form-logo
-{
-    border: 1px solid #ccc;
-    background: $offwhite;
-    padding: 20px;
-    margin-bottom: 20px;
-    
-    label {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin: 5px 0 0 0;
-    }
-}
-
-.business-form-logo-upload
-{
-}
-
-//hours field
-.business-form-hours
-{
-    textarea
-    {
-        height: 250px;
-    }
-}
-
-.business-form-subheader
-{
-    color: $brandblue;
-    font-weight: bold;
-    font-size: rem(18px);
-    font-family: 'Source Sans Pro', sans-serif;
-    margin-bottom: 15px;
+    @apply max-w-none;
 }

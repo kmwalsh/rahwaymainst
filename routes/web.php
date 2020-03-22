@@ -18,7 +18,8 @@ Route::get('/', function () {
     $businesses = Business::where('approved', '1')->orderBy('created_at', 'asc')->get();
 
     return view('list', [
-        'businesses' => $businesses
+        'businesses' => $businesses,
+        'search'     => false,
     ]);
 });
 
@@ -30,12 +31,21 @@ Route::get('privacy', function () {
     return view('privacy');
 });
 
+Route::get('about', function () {
+    return view('about');
+});
+// contact
+Route::post('/contact', 'ContactController@contact')->name('contact');
 
 Route::get('links', function () {
     return view('links');
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/account', 'HomeController@index')->name('home');
+
+// search
+Route::any('/search', 'BusinessController@search')->name('search');
 
 // create
 Route::get('/create', 'BusinessController@createBusiness')->name('create');

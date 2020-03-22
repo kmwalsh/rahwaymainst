@@ -49,8 +49,8 @@ class BusinessController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required|max:255',
-            'description' => 'required|max:500',
-            'phone' => 'required|max:500',
+            'description' => 'required|max:255',
+            'phone' => 'required|max:12',
             'hours' => 'required|max:1000',
             'address' => 'required|max:255',
         ]);
@@ -101,8 +101,8 @@ class BusinessController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required|max:255',
-            'description' => 'required|max:500',
-            'phone' => 'required|max:500',
+            'description' => 'required|max:255',
+            'phone' => 'required|max:12',
             'hours' => 'required|max:1000',
             'address' => 'required|max:255',
         ]);
@@ -148,4 +148,19 @@ class BusinessController extends Controller
         return redirect('/home');        
     }
 
+    public function search(Request $request) 
+    {
+        $q = $request->get( 'q' );
+        $business = Business::where('name','LIKE','%'.$q.'%')->orWhere('description','LIKE','%'.$q.'%')->get();        
+        if(count($business) > 0)
+            return view('list',[
+                'businesses' => $business,
+                'superadmin' => false,
+                'q'          => $q,
+                'search'     => true,
+            ]);
+        else return view ('noResults',[
+            'q'          => $q
+        ]);
+    }
 }

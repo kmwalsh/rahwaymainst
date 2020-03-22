@@ -1,62 +1,66 @@
 @extends('layouts.app')
-@section('title', 'Get Listed on Rahway Main St.')
+@section('title', 'Open on Rahway Main St.')
 
 @section('content')
 
 <!-- Display Validation Errors -->
 @include('common.errors')
-<form class="shadow-lg border border-gray-200 rounded-md p-5 mb-10" method="POST" action="/create" add enctype="multipart/form-data">
+<form class="form-wrapper form-create-rms" method="POST" action="/create" add enctype="multipart/form-data">
     @csrf
     
-    <h2 class="text-gray-900 text-2xl font-light mt-0">Open on Rahway Main St.</h2>
+    <h2 class="form-header">Open on Rahway Main St.</h2>
     <ul>
         <li><b>Post your own businesses, freelance hours, organizations, etc.</b> Do not post for anyone else.</li>
         <li>All posts are verified  before going public. Rahway Main St. will try to verify by internet, but you may receive an e-mail or phone call.</li>
     </ul>
 
-    <fieldset class="mb-4 mt-4">
-        <label for="name"><span class="block text-gray-700 text-sm font-bold mb-1">Name<span class="text-red-600">*</span></span>
-            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" text-red-600 type="text" name="name">
+    <fieldset>
+        <label for="name"><span class="form-label">Name<span class="form-required">*</span></span>
+            <input class="form-input" text-red-600 type="text" name="name">
         </label>
     </fieldset>
-    <fieldset class="mb-4 mt-4">
-        <label><span class="block text-gray-700 text-sm font-bold mb-1">Description<span class="text-red-600">*</span></span>
-            <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="description"></textarea>
+    <fieldset>
+        <label>
+            <span class="form-label">Description<span class="form-required">*</span></span>
+            <textarea maxlength="255" class="js-count-text form-input" name="description"></textarea>
+            <span class="form-count-characters js-count-characters"><span class="counter">0</span>/<span class="maxlength">0</span></span>
         </label>
     </fieldset>
-    <section class="lg:grid lg:grid-cols-3 lg:gap-10">
+    <section class="form-grid">
         <fieldset>
-            <label><span class="block text-gray-700 text-sm font-bold mb-1">Address<span class="text-red-600">*</span></span>
-                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  type="text" name="address" value="Rahway, New Jersey">
+            <label><span class="form-label">Address<span class="form-required">*</span></span>
+                <input class="form-input"  type="text" name="address" value="Rahway, New Jersey">
                 <aside class="text-sm text-gray-500">No public office? Leave as "Rahway, New Jersey."</aside>
             </label>
         </fieldset>
         <fieldset>
-            <label><span class="block text-gray-700 text-sm font-bold mb-1">Phone<span class="text-red-600">*</span></span>
-                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="tel" name="phone">
+            <label><span class="form-label">Phone<span class="form-required">*</span></span>
+                <input class="form-input" type="tel" name="phone">
             </label>
         </fieldset>
         <fieldset>
-            <label><span class="block text-gray-700 text-sm font-bold mb-1">Online Store, Virtual Office, Facebook Account, Etc.</span>
-                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="store">
+            <label><span class="form-label">Online Store, Virtual Office, Facebook Account, Etc.</span>
+                <input class="form-input" type="text" name="store">
             </label>
         </fieldset>
     </section>
-    <fieldset class="mb-4 mt-4">
-        <label><span class="block text-gray-700 text-sm font-bold mb-1">Hours (COVID-19 Special Hours, Office Procedures, Etc.)<span class="text-red-600">*</span></span>
-        <textarea text-red-600 class="h-32 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="hours"></textarea>
+    <fieldset>
+        <label>
+            <span class="form-label">Hours (COVID-19 Special Hours, Office Procedures, Etc.)<span class="form-required">*</span></span>
+            <textarea maxlength="1000" class="js-count-text h-32 form-input" name="hours"></textarea>
+            <span class="form-count-characters text-xs js-count-characters"><span class="counter">0</span>/<span class="maxlength">0</span></span>
         </label>
     </fieldset>
-    <fieldset class="mb-4 mt-4">
-        <label><span class="block text-gray-700 text-sm font-bold mb-1">Logo or Promotional Image</span>
-            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="file" name="logo">
+    <fieldset>
+        <label><span class="form-label">Logo or Promotional Image</span>
+            <input class="form-input" type="file" name="logo">
         </label>
     </fieldset>
-    <fieldset class="mb-4 mt-4">
+    <fieldset>
         <p class="mt-3 text-sm">
             <i class="fa fa-check"></i> I agree to the <a target="_blank" href="/terms">Terms of Service</a>.    
         </p>
-        <button type="submit" class="button inline-block mt-1 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+        <button type="submit" class="button form-button">
             <i class="fa fa-plus"></i> Create
         </button>
     </fieldset>
