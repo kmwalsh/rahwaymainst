@@ -10,13 +10,6 @@
     <title>Rahway Main St. - @yield('title')</title>
     @section('title', 'A digital main street for Rahway, New Jersey.')
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
@@ -32,6 +25,18 @@
     <meta property="og:description" content="@yield('description')">
     <meta property="og:type" content="article">
     <meta property="og:image" content="">
+
+    <!-- Analytics -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161612268-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-161612268-1');
+    </script>
+
 </head>
 <body class="site flex flex-col min-h-screen">
     <header class="flex items-center justify-between flex-wrap bg-teal-500 p-6">
@@ -129,5 +134,8 @@
             </aside>
         </div>
     </footer>
+    
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
 </body>
 </html>

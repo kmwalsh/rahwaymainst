@@ -12,7 +12,7 @@
     <div class="container mx-auto">
         <div class="home-hero-container">
             <h2 class="home-hero-header">Shop Rahway local — digitally!</h2> 
-            <p class="home-hero-content">Rahway Main St. is a "digital main street" for Rahway, New Jersey. It was created in response to the COVID-19 outbreak. Rahway citizens can easily discover changes to business hours, church services, and more. Help support your local businesses in these strange times.</p>
+            <p class="home-hero-content">Rahway Main St. is a "digital main street" for Rahway, New Jersey. It was created in response to COVID-19. Rahway citizens can discover changes to business hours, church services, organization procedures, and more. Support local organizations in these strange times.</p>
 
             <a class="button home-hero-button" href="#business-list">Walk Down Rahway Main St.</a>
             @guest                
@@ -30,7 +30,7 @@
 <form action="/search" method="POST" role="search">
     {{ csrf_field() }}
     <div class="search-input search-home">
-        <input type="text" class="search-input" name="q" placeholder="Search Rahway businesses"> <span class="input-group-btn">
+        <input type="text" class="search-input" name="q" placeholder="Search Rahway businesses, organizations, freelancers, churches..."> <span class="input-group-btn">
             <button type="submit" class="btn btn-default">
                 <i class="fa fa-search"></i>
             </button>
