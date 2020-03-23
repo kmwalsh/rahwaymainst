@@ -14367,6 +14367,13 @@ body.no-scroll {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    opacity: 1;
+    background: transparent;
+    position: static;
+    height: auto;
+    width: 100%;
+    padding: 0;
+    transform: none;
   }
 }
 
@@ -14392,6 +14399,12 @@ body.no-scroll {
   top: 30px;
   right: 30px;
   font-size: 1.875rem;
+}
+
+@media (min-width: 1024px) {
+  .navbar-close {
+    display: none !important;
+  }
 }
 
 .navigation-item {
