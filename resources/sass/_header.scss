@@ -1,0 +1,109 @@
+.site-header
+{
+    @apply flex items-center justify-between flex-wrap bg-teal-500 p-6;
+}
+
+.site-header-container
+{
+    @apply flex flex-row;
+}
+
+.nav-mobile-wrapper
+{
+    @include media(">=desktop") {
+        @apply hidden;
+    }
+}
+
+.navbar-toggler
+{
+    @apply flex items-center px-3 py-2 border rounded text-teal-200 border-teal-200;
+
+    &:hover {
+        @apply text-white;
+    }
+}
+
+.header-navigation
+{
+    @apply w-full opacity-0 bg-teal-600;
+
+    transform: translateY(-1200px);
+    transition: 200ms linear all;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    padding: 0 20px;
+
+    z-index: 9999;
+
+    &.open 
+    {
+        @apply block;
+        @apply opacity-100;
+        transform: translateY(0);
+    }
+
+    @include media(">=desktop") 
+    {
+        @apply flex items-center justify-end;
+    }
+}
+
+.header-navigation-menu
+{
+    @apply text-2xl text-white;
+
+    li {
+        @apply block;
+    }
+
+    @include media(">=desktop") {
+        @apply flex justify-end text-lg;
+    }
+}
+
+.navbar-close
+{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+
+    @apply text-3xl;
+}
+
+.navigation-item
+{
+    @apply block mt-4 text-teal-100 mr-6;
+
+    &:hover {
+        @apply text-white;
+    }
+
+    
+    @include media(">=desktop") {
+        @apply inline-block mt-0;
+    }
+}
+
+.site-header-branding
+{
+    @apply text-white mr-6;
+
+    @include media(">=desktop") {
+        @apply flex flex-col items-start flex-shrink-0;
+    }
+}
+
+.branding-header
+{
+    @apply font-semibold text-3xl tracking-tight;
+}
+
+.branding-tagline
+{
+    @apply font-hairline text-base tracking-tight;
+}

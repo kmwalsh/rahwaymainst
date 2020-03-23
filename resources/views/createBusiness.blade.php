@@ -64,10 +64,10 @@
     </fieldset>
     <fieldset>
         <p class="mt-3 text-sm">
-            <i class="fa fa-check"></i> I agree to the <a target="_blank" href="/terms">Terms of Service</a>.    
+            <i class="icon-check"></i> I agree to the <a target="_blank" href="/terms">Terms of Service</a>.    
         </p>
         <button type="submit" class="button form-button">
-            <i class="fa fa-plus"></i> Create
+            <i class="icon-plus"></i> Create
         </button>
     </fieldset>
 </form>

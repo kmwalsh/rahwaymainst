@@ -5,7 +5,7 @@
 @section('content')
 <section class="rms-about">
     <section>
-        <h1 class="rms-header">Made with <i class="fa fa-heart text-red-900"></i> in Rahway, New Jersey</h1>
+        <h1 class="rms-header">Made with <i class="icon-heart text-red-900"></i> in Rahway, New Jersey</h1>
         <p class="rms-text">Rahway Main St. was created by a Rahway citizen in response to the early 2020 COVID-19 outbreak. Many local businesses, government offices, churches, and other organizations have needed to change procedures. We've seen switches to takeout only, off-hours, virtual appointments, and more. With this radical shift in how we do business, Rahway Main St. was created to provide a "digital main street" for Rahway, New Jersey.</p>
 
         <h2>Credit</h2>

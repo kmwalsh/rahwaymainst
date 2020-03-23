@@ -26,7 +26,7 @@ You are a super-administrator.
 
         <header class="dashboard-business-header">
             @if ($business->approved == 1 )
-                <span class="dashboard-button approved"><i class="fa fa-check mr-1"></i> Approved</span>
+                <span class="dashboard-button approved"><i class="icon-check mr-1"></i> Approved</span>
             @endif
             
             @if( $superadmin )
@@ -34,7 +34,7 @@ You are a super-administrator.
                     @csrf
                     <fieldset>
                         <button type="submit" class="admin-button button font-bold uppercase">
-                            <i class="fa fa-plus mr-1"></i> Change Status
+                            <i class="icon-plus mr-1"></i> Change Status
                         </button>
                     </fieldset>
                 </form>
@@ -43,7 +43,7 @@ You are a super-administrator.
         
         @if ($business->approved == 0 )
             <div class="flex flex-row content-center mb-3">
-                <span class="dashboard-button pending"><i class="fa fa-hourglass mr-1"></i> Pending Approval</span>
+                <span class="dashboard-button pending"><i class="icon-hourglass mr-1"></i> Pending Approval</span>
 
                 <p class="mt-0 mb-0 ml-3 text-sm text-gray-500">Pending administrative review. Please allow up to 1-3 business days for approval.</p>
             </div>
@@ -117,7 +117,7 @@ You are a super-administrator.
                         <!--Title-->
                         <div class="flex justify-between items-center pb-3 text-right">
                         <div class="modal-close cursor-pointer z-50">
-                            <i class="fa fa-times"></i>
+                            <i class="icon-times"></i>
                         </div>
                         </div>
 
@@ -141,7 +141,7 @@ You are a super-administrator.
         </section>
         <fieldset>
             <button type="submit" class="button bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-                <i class="fa fa-plus"></i> Update Business Information
+                <i class="icon-plus"></i> Update Business Information
             </button>
         </fieldset>
         </form>

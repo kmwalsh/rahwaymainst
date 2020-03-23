@@ -30,9 +30,9 @@
 <form action="/search" method="POST" role="search">
     {{ csrf_field() }}
     <div class="search-input search-home">
-        <input type="text" class="search-input" name="q" placeholder="Search Rahway businesses, organizations, freelancers, churches..."> <span class="input-group-btn">
+        <input type="text" class="search-input" name="q" placeholder="Search Rahway businesses, organizations, freelancers, places of worship..."> <span class="input-group-btn">
             <button type="submit" class="btn btn-default">
-                <i class="fa fa-search"></i>
+                <i class="icon-search"></i>
             </button>
         </span>
     </div>
@@ -61,13 +61,13 @@
             <section class="business-contact mb-2 flex flex-row mt-8">
                 @if ( $business->phone )
                     <section class="phone mb-3 mr-2">
-                        <a class="button business-list-button" href="tel:{{ $business->phone }}"><i class="fa fa-phone mr-1"></i> {{ $business->phone }}</a>
+                        <a class="button business-list-button" href="tel:{{ $business->phone }}"><i class="icon-phone mr-1"></i> {{ $business->phone }}</a>
                     </section>
                 @endif
 
                 @if ( $business->store )
                     <section class="store mb-3">
-                        <a target="_blank" rel="noopener" class="button business-list-button" href="{{ $business->store }}"><i class="fa fa-shopping-cart mr-1"></i> Shop Online</a>
+                        <a target="_blank" rel="noopener" class="button business-list-button" href="{{ $business->store }}"><i class="icon-shopping-cart mr-1"></i> Shop Online</a>
                     </section>
                 @endif
             </section>
@@ -75,7 +75,7 @@
 
         @if ( $business->address )
             <section class="business-location">
-                <i class="fa fa-map-marker mr-1"></i> <a href="https://www.google.com/maps/search/{{ $business->address }}" target="_blank" rel="noopener">{{ $business->address }}</a>
+                <i class="icon-map-marker mr-1"></i> <a href="https://www.google.com/maps/search/{{ $business->address }}" target="_blank" rel="noopener">{{ $business->address }}</a>
             </section>
         @endif
 
@@ -112,7 +112,7 @@
                     <!--Title-->
                     <div class="flex justify-between items-center pb-3 text-right">
                     <div class="modal-close cursor-pointer z-50">
-                        <i class="fa fa-times"></i>
+                        <i class="icon-times"></i>
                     </div>
                     </div>
 

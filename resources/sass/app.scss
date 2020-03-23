@@ -1,8 +1,4 @@
-@import '~@fortawesome/fontawesome-free/scss/fontawesome';
-@import '~@fortawesome/fontawesome-free/scss/regular';
-@import '~@fortawesome/fontawesome-free/scss/solid';
-@import '~@fortawesome/fontawesome-free/scss/brands';
-@import '~include-media/dist/_include-media';
+@import '~include-media/dist/_include-media.scss';
 
 @tailwind base;
 
@@ -10,10 +6,13 @@
 
 @tailwind utilities;
 
+@import 'icomoon';
+
 @import 'search';
 @import 'typography';
 @import 'structure';
 @import 'forms';
+@import 'header';
 
 // pages
 @import 'home';
