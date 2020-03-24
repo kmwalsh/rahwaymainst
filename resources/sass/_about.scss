@@ -13,10 +13,20 @@
 
 .rms-header
 {
-    @apply font-hairline uppercase text-3xl;
+    @apply font-hairline uppercase text-xl;
+
+    @include media(">=1024px")
+    {
+        @apply text-3xl;
+    }
 }
 
 .rms-content
 {
     @apply text-2xl font-hairline;
+
+    @include media(">=1024px")
+    {
+        @apply text-3xl;
+    }
 }

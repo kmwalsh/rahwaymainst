@@ -146,20 +146,4 @@ class BusinessController extends Controller
     
         return redirect('/home');        
     }
-
-    public function search(Request $request) 
-    {
-        $q = $request->get( 'q' );
-        $business = Business::where('name','LIKE','%'.$q.'%')->orWhere('description','LIKE','%'.$q.'%')->get();        
-        if(count($business) > 0)
-            return view('list',[
-                'businesses' => $business,
-                'superadmin' => false,
-                'q'          => $q,
-                'search'     => true,
-            ]);
-        else return view ('noResults',[
-            'q'          => $q
-        ]);
-    }
 }

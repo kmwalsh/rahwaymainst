@@ -42,8 +42,8 @@
     <header class="site-header">
         <div class="site-header-container container mx-auto">
             <div class="site-header-branding">
-                <h1 class="branding-header"><a href="/">Rahway Main St.</a></h1>
-                <h2 class="branding-tagline">Rahway Main St. is a digital main street for Rahway, New Jersey.</h2>
+                <h1 class="branding-header"><a href="/">Rahway Main St. <span class="branding-version">(Beta)</a></a></h1>
+                <h2 class="branding-tagline">A digital main street for Rahway, New Jersey.</h2>
             </div>
             <div class="nav-mobile-wrapper">
                 <button class="js-navbar-toggler navbar-toggler">
@@ -98,30 +98,30 @@
         </main>
     @endif
 
-    <footer class="flex items-center justify-between flex-wrap bg-teal-900 p-8 mt-10">
+    <footer class="site-footer">
 
         <div class="container mx-auto">
-            <div class="lg:flex lg:flex-row lg:justify-between">
-                <div class="flex flex-col items-start flex-shrink-0 text-white mr-6">
-                    <h1 class="font-semibold text-2xl tracking-tight"><a href="/">Rahway Main St.</a></h1>
-                    <h2 class="font-hairline text-md tracking-tight">Rahway Main St. is a digital main street for Rahway, New Jersey.</h2>
+            <div class="site-footer-info">
+                <div class="site-footer-branding">
+                    <h1 class="site-footer-branding-header"><a href="/">Rahway Main St.</a></h1>
+                    <h2 class="site-footer-branding-tagline">Rahway Main St. is a digital main street for Rahway, New Jersey.</h2>
                 </div>
 
                 <nav class="w-full block">
-                    <ul class="flex-grow flex justify-start lg:justify-end lg:items-center lg:w-auto">
-                        <li class="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-teal-100 mr-4"><a href="/">Home</a></li>
+                    <ul class="site-footer-menu">
+                        <li class="footer-navigation-item"><a href="/">Home</a></li>
                         @guest
-                            <li class="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-teal-100 mr-4">
+                            <li class="footer-navigation-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
-                                <li class="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-teal-100 mr-4">
+                                <li class="footer-navigation-item">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @endguest
-                        <li class="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-teal-100 mr-4"><a href="/links">Rahway Links</a></li>
-                        <li class="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-teal-100 mr-4"><a href="/about">About &amp; Contact</a></li>
+                        <li class="footer-navigation-item"><a href="/links">Rahway Links</a></li>
+                        <li class="footer-navigation-item"><a href="/about">About &amp; Contact</a></li>
                     </ul>
                 </nav>
             </div>

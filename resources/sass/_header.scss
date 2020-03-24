@@ -5,7 +5,7 @@
 
 .site-header-container
 {
-    @apply flex flex-row;
+    @apply flex flex-row justify-between;
 }
 
 .nav-mobile-wrapper
@@ -78,6 +78,8 @@
     top: 30px;
     right: 30px;
 
+    cursor: pointer;
+
     @apply text-3xl;
 
     @include media(">=desktop") 
@@ -88,10 +90,10 @@
 
 .navigation-item
 {
-    @apply block mt-4 text-teal-100 mr-6;
+    @apply block mt-4 text-white mr-6;
 
     &:hover {
-        @apply text-white;
+        @apply text-teal-200;
     }
 
     
@@ -112,6 +114,11 @@
 .branding-header
 {
     @apply font-semibold text-3xl tracking-tight;
+}
+
+.branding-version
+{
+    @apply text-sm opacity-50;
 }
 
 .branding-tagline

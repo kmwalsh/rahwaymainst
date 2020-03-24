@@ -45,7 +45,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/account', 'HomeController@index')->name('home');
 
 // search
-Route::any('/search', 'BusinessController@search')->name('search');
+Route::any('/search', 'SearchController@search')->name('search');
 
 // create
 Route::get('/create', 'BusinessController@createBusiness')->name('create');

@@ -12,7 +12,7 @@
 
 
         <fieldset>
-            <label for="name" class="form-label">{{ __('Name') }}</label>
+            <label for="name" class="form-label">{{ __('Name') }}<span class="form-required">*</span></label>
             <input id="name" type="text" class="form-input @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
             @error('name')
@@ -23,7 +23,7 @@
         </fieldset>
 
         <fieldset>
-            <label for="email" class="form-label">{{ __('E-Mail Address') }}</label>
+            <label for="email" class="form-label">{{ __('E-Mail Address') }}<span class="form-required">*</span></label>
             <input id="email" type="email" class="form-input @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
             @error('email')
@@ -36,7 +36,7 @@
         </fieldset>
 
         <fieldset>
-            <label for="password" class="form-label">{{ __('Password') }}</label>
+            <label for="password" class="form-label">{{ __('Password') }}<span class="form-required">*</span></label>
             <input id="password" type="password" class="form-input @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
             @error('password')
@@ -47,7 +47,7 @@
         </fieldset>
 
         <fieldset>
-            <label for="password-confirm" class="form-label">{{ __('Confirm Password') }}</label>
+            <label for="password-confirm" class="form-label">{{ __('Confirm Password') }}<span class="form-required">*</span></label>
 
             <input id="password-confirm" type="password" class="form-input focus:shadow-outline @error('password') is-invalid @enderror" name="password_confirmation" required autocomplete="new-password">
         </fieldset>

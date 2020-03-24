@@ -1,0 +1,51 @@
+.site-footer
+{
+    @apply flex items-center justify-between flex-wrap bg-teal-900 p-8 mt-10;
+}
+
+.site-footer-info
+{
+    @include media(">=desktop") {
+        @apply flex flex-row justify-between;
+    }
+}
+
+.site-footer-branding
+{
+    @apply flex flex-col items-start flex-shrink-0 text-white mr-6;
+}
+
+.site-footer-branding-header
+{
+    @apply font-semibold text-2xl tracking-tight;
+}
+
+.site-footer-branding-tagline
+{
+    @apply font-hairline text-sm tracking-tight;
+    @include media(">=desktop") {
+        @apply text-base;
+    }
+}
+
+.site-footer-menu
+{
+    @apply mt-2 mb-5;
+
+    @include media(">=desktop") {
+        @apply flex-grow flex justify-start justify-end items-center w-auto;
+    }
+}
+
+.footer-navigation-item
+{
+    @apply block mt-4 text-gray-200 mr-4;
+
+    &:hover {
+        @apply text-teal-100;
+    }
+
+    @include media(">=desktop") {
+        @apply inline-block mt-0;
+    }
+}

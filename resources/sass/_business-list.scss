@@ -4,7 +4,7 @@
     @apply mt-5;
 }
 
-@include media(">=1024px") 
+@include media(">=desktop") 
 {
     .business-list-grid
     {
@@ -24,12 +24,22 @@
 
 .business-list-name
 {
-    @apply mt-0 mb-1 text-3xl;
+    @apply mt-0 mb-1 text-2xl;
+
+    @include media(">=desktop") 
+    {
+        @apply text-3xl;
+    }
 }
 
 .business-description
 {
-    @apply mb-4 text-xl font-light;
+    @apply mb-4 text-lg font-light;
+
+    @include media(">=desktop") 
+    {
+        @apply text-xl;
+    }
 }
 
 .business-list-button

@@ -21,17 +21,17 @@
             <h2 class="form-header">{{ __('Contact Rahway Main St.') }}</h2>
             <fieldset class="mb-4">
                 <label for="name"><span class="form-label">Name<span class="text-red-600">*</span></span>
-                    <input required type="text" name="name" class="form-input">
+                    <input required type="text" name="name" class="form-input" value="{{ old('name') }}">
                 </label>
             </fieldset>
             <fieldset class="mb-4">
                 <label for="email"><span class="form-label">Email<span class="text-red-600">*</span></span>
-                    <input required type="email" name="email" class="form-input">
+                    <input required type="email" name="email" class="form-input" value="{{ old('email') }}">
                 </label>
             </fieldset>
             <fieldset class="mb-4">
                 <label for="comments"><span class="form-label">Comments<span class="text-red-600">*</span></span>
-                <textarea required maxlength="255" class="js-count-text h-32 form-input" name="comments"></textarea>
+                <textarea required maxlength="255" class="js-count-text h-32 form-input" name="comments">{{ old('comments') }}</textarea>
                 <span class="form-count-characters js-count-characters">
                     <span class="counter">0</span>/<span class="maxlength">0</span>
                     <span class="counter-error"></span>

@@ -30,11 +30,11 @@
 
 .home-hero-button
 {
-    @apply inline-block bg-blue-500 text-white font-bold py-3 px-6 rounded;
+    @apply inline-block bg-blue-500 text-white font-bold py-3 px-6 rounded mb-5;
 
     @include media(">=1024px")
     {
-        @apply text-xl;
+        @apply text-xl mb-0;
     }
 
     &:hover {

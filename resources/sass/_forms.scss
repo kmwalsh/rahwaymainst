@@ -61,6 +61,49 @@
     @apply text-gray-600 text-xs;
 }
 
+.form-logo-area
+{
+    @apply bg-gray-100 border border-gray-300 p-2 rounded mt-4 mb-4;
+
+    @include media(">=desktop") {
+        @apply grid-cols-6 grid gap-3;
+    }
+}
+
+.form-logo-image
+{
+    @apply h-40 opacity-75 rounded transition duration-150 ease-in-out;
+    @include media(">=desktop")
+    {
+        @apply col-span-2;
+    }
+
+    &:hover {
+        @apply opacity-100;
+    }
+}
+
+.business-form-hours-input
+{
+    @apply h-48;
+}
+
+.dashboard-pending-area
+{
+    @include media(">=desktop") {
+        @apply flex flex-row content-center mb-3;
+    }
+}
+
+.dashboard-pending-text
+{
+    @apply mt-3 mb-3 text-sm text-gray-500;
+
+    @include media(">=desktop") {
+        @apply ml-3 mt-0 mb-0;
+    }
+}
+
 @include media(">=1024px")
 {
     .form-grid
