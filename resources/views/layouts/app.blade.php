@@ -24,7 +24,7 @@
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:description" content="@yield('description')">
     <meta property="og:type" content="article">
-    <meta property="og:image" content="">
+    <meta property="og:image" content="{{ asset('img/rms-og.jpg') }}">
 
     <!-- Analytics -->
     <!-- Global site tag (gtag.js) - Google Analytics -->
