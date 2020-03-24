@@ -17,7 +17,7 @@
     <meta name="title" content="Rahway Main St. - @yield('title')">
     <meta name="description" content="@yield('description')">
 
-    <!-- Branding -->
+    <!-- Facebook OG -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('img/favicon.png') }}?v=3">
     <meta property="og:title" content="Rahway Main St. - @yield('title')">
     <meta property="og:site_name" content="Rahway Main St.">
@@ -25,6 +25,12 @@
     <meta property="og:description" content="@yield('description')">
     <meta property="og:type" content="article">
     <meta property="og:image" content="{{ asset('img/rms-og.jpg') }}">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="app">
+    <meta name="twitter:title" content="Rahway Main St. - @yield('title') ">
+    <meta name="twitter:site" content="">
+    <meta name="twitter:description" content="@yield('description')">
 
     <!-- Analytics -->
     <!-- Global site tag (gtag.js) - Google Analytics -->
