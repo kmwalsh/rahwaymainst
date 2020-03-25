@@ -16,7 +16,7 @@
         transition: 300ms linear all;
 
         a {
-            @apply text-teal-700;
+            @apply text-teal-700 block;
         }
 
         &:first-child,
