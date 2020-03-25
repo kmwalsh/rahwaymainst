@@ -150,6 +150,9 @@
 </section>
 @endif
 
-{{ $businesses->links() }}
+
+@if ($businesses->hasPages())
+    {{ $businesses->links() }}
+@endif
 
 @endsection
