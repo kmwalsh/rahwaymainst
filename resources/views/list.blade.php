@@ -149,5 +149,7 @@
 </section>
 </section>
 @endif
-    
+
+{{ $businesses->links() }}
+
 @endsection

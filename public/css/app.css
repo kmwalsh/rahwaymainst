@@ -14657,6 +14657,72 @@ body.no-scroll {
   background-color: #2b6cb0;
 }
 
+.pagination {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+}
+
+.pagination .page-item {
+  margin: 0;
+  padding: 0;
+  font-size: 1.875rem;
+  color: #2c7a7b;
+  margin-right: 1rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  border-radius: 9999px;
+  border-width: 1px;
+  background-color: #e2e8f0;
+  border-color: #2c7a7b;
+  height: 3rem;
+  width: 3rem;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  transition: 300ms linear all;
+}
+
+.pagination .page-item a {
+  color: #2c7a7b;
+}
+
+.pagination .page-item:first-child, .pagination .page-item:last-child {
+  border-style: none;
+  box-shadow: none;
+  background-color: transparent;
+}
+
+.pagination .page-item:hover, .pagination .page-item:active, .pagination .page-item:focus {
+  background-color: #319795;
+  color: #fff;
+}
+
+.pagination .page-item:hover a, .pagination .page-item:active a, .pagination .page-item:focus a {
+  color: #fff;
+}
+
+.pagination .page-item.active {
+  background-color: #f7fafc;
+  color: #a0aec0;
+  border-color: #a0aec0;
+}
+
+.pagination .page-item.active:hover, .pagination .page-item.active:active, .pagination .page-item.active:focus {
+  background-color: #f7fafc;
+  color: #a0aec0;
+  border-color: #a0aec0;
+}
+
+.pagination .page-item.active:hover a, .pagination .page-item.active:active a, .pagination .page-item.active:focus a {
+  background-color: #f7fafc;
+  color: #a0aec0;
+  border-color: #a0aec0;
+}
+
 .home-hero {
   background-image: url(../img/rms-header.jpg);
   background-size: cover;
