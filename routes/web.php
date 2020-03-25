@@ -15,7 +15,7 @@ use Illuminate\Http\Request;
 |
 */
 Route::get('/', function () {
-    $businesses = Business::where('approved', '1')->inRandomOrder()->paginate(10);
+    $businesses = Business::where('approved', '1')->orderBy('created_at', 'asc')->paginate(10);
 
     return view('list', [
         'businesses' => $businesses,
