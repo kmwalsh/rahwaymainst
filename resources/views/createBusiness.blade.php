@@ -16,13 +16,13 @@
 
     <fieldset>
         <label for="name"><span class="form-label">Name<span class="form-required">*</span></span>
-            <input class="form-input" text-red-600 type="text" name="name">
+            <input class="form-input" text-red-600 type="text" name="name" value="{{ old('name') }}">
         </label>
     </fieldset>
     <fieldset>
         <label>
             <span class="form-label">Description<span class="form-required">*</span></span>
-            <textarea maxlength="255" class="js-count-text form-input" name="description"></textarea>
+            <textarea maxlength="255" class="js-count-text form-input" name="description">{{ old('description') }}</textarea>
             <span class="form-count-characters js-count-characters">
                     <span class="counter">0</span>/<span class="maxlength">0</span>
                     <span class="counter-error"></span>
@@ -32,7 +32,7 @@
     <section class="form-grid">
         <fieldset>
             <label><span class="form-label">Address<span class="form-required">*</span></span>
-                <input class="form-input"  type="text" name="address" value="Rahway, New Jersey">
+                <input class="form-input"  type="text" name="address" value="Rahway, New Jersey" value="{{ old('address') }}">
                 <aside class="text-sm text-gray-500">No public office? Leave as "Rahway, New Jersey."</aside>
             </label>
         </fieldset>
@@ -43,14 +43,14 @@
         </fieldset>
         <fieldset>
             <label><span class="form-label">Online Store, Virtual Office, Facebook Account, Etc.</span>
-                <input class="form-input" type="text" name="store">
+                <input class="form-input" type="text" name="store" value="{{ old('store') }}">
             </label>
         </fieldset>
     </section>
     <fieldset>
         <label>
             <span class="form-label">Hours (COVID-19 Special Hours, Office Procedures, Etc.)<span class="form-required">*</span></span>
-            <textarea maxlength="1000" class="js-count-text h-32 form-input" name="hours"></textarea>
+            <textarea maxlength="1000" class="js-count-text h-32 form-input" name="hours">{{ old('hours') }}</textarea>
             <span class="form-count-characters js-count-characters">
                 <span class="counter">0</span>/<span class="maxlength">0</span>
                 <span class="counter-error"></span>
