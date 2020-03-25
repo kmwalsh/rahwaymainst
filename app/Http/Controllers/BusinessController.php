@@ -7,6 +7,9 @@ use App\BusinessClaim;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
+use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Pagination\Paginator;
+
 class BusinessController extends Controller
 {
     /**
