@@ -20,7 +20,7 @@ class SearchController extends Controller
     public function search(Request $request) 
     {
         $q = $request->get( 'q' );
-        $business = Business::where('name','LIKE','%'.$q.'%')->orWhere('description','LIKE','%'.$q.'%')->get();        
+        $business = Business::where('name','LIKE','%'.$q.'%')->orWhere('description','LIKE','%'.$q.'%')->orWhere('hours','LIKE','%'.$q.'%')->get();        
         if(count($business) > 0)
             return view('list',[
                 'businesses' => $business,
