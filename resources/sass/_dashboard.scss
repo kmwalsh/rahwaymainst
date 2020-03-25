@@ -14,20 +14,77 @@
 
 .dashboard-button 
 {
-    @apply border p-1 pr-2 pl-2 mr-1 rounded border-green-600 text-sm font-bold uppercase text-green-600 bg-green-100;
+    @apply border p-1 pr-2 pl-2 mr-1 rounded border-green-600 text-xs font-bold uppercase text-green-600 bg-green-100;
+    width: 100px;
 
     &.admin
     {
-        @apply border p-1 pr-2 pl-2 inline-block rounded border-gray-500 text-sm font-bold uppercase text-gray-500 bg-gray-100;
+        @apply border p-1 pr-2 pl-2 inline-block rounded border-gray-500 text-xs font-bold uppercase text-gray-500 bg-gray-100;
     }
 
     &.pending
     {
-        @apply border p-1 pr-2 pl-2 mr-1 rounded-sm border-yellow-600 text-sm font-hairline uppercase text-yellow-600 bg-yellow-100;
+        @apply border p-1 pr-2 pl-2 mr-1 rounded border-yellow-600 text-xs font-bold uppercase text-yellow-600 bg-yellow-100;
     }
 }
 
 .dashboard-business-form
 {
     @apply max-w-none bg-transparent shadow-none border-none px-0 pt-0 pb-0 mb-0 mt-0 mb-0;
+}
+
+
+.business-short-list
+{
+    @apply border border-gray-200;
+}
+
+.business-short-list-item
+{
+    @apply border-b border-gray-200 p-4;
+
+    &:last-of-type
+    {
+        @apply border-b-0;
+    }
+}
+
+.business-short-list-name
+{
+    @apply mt-0 mb-0 flex flex-row flex-1 items-center;
+
+    .business-short-list-name-label 
+    {
+        @apply mt-0 ml-8;
+    }
+}
+
+.business-short-list-edit
+{
+    @apply block mt-2 mb-2 text-sm;
+}
+
+.inline-form
+{
+    @apply inline-block;
+}
+
+.status-button
+{
+    @apply text-sm;
+}
+
+.business-dashboard-actions
+{
+    @apply flex flex-row;
+
+    a, form
+    {
+        @apply mr-2 text-blue-600;
+
+        &:hover, &:focus 
+        {
+            @apply text-blue-900;
+        }
+    }
 }

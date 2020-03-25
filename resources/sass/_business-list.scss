@@ -34,23 +34,31 @@
 
 .business-description
 {
-    @apply mb-4 text-lg font-light;
+    @apply mb-4 text-base font-light;
+}
 
-    @include media(">=desktop") 
-    {
-        @apply text-xl;
+.business-contact
+{
+    @apply mb-2 mt-8;
+    
+    @include media(">=desktop") {
+        @apply  flex flex-row ;
     }
 }
 
 .business-list-button
 {
-    @apply bg-blue-700 font-light text-white py-2 px-4 rounded;
+    @apply inline-block bg-blue-700 text-base font-light text-white py-2 px-4 rounded;
 
     &:hover {
         @apply bg-blue-900 text-white;
     }
     &:focus {
         @apply outline-none shadow-outline;
+    }
+
+    @include media(">=desktop") {
+        @apply inline-block;
     }
 }
 
@@ -84,5 +92,14 @@
 
     &:hover {
         @apply opacity-100;
+    }
+}
+
+.business-claim-link
+{
+    @apply mt-3 text-sm text-gray-400;
+
+    a {
+        @apply text-sm text-gray-400;
     }
 }

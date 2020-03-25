@@ -58,7 +58,7 @@
         @endif
 
         @if ( $business->phone || $business->store )
-            <section class="business-contact mb-2 flex flex-row mt-8">
+            <section class="business-contact">
                 @if ( $business->phone )
                     <section class="phone mb-3 mr-2">
                         <a class="button business-list-button" href="tel:{{ $business->phone }}"><i class="icon-phone mr-1"></i> {{ $business->phone }}</a>
@@ -132,6 +132,17 @@
         @if ($business->logo )
             </div> <!-- flex wrapper class for business with logo -->
         @endif
+
+        @guest        
+            @if ( $business->user_id === 1 ) 
+                <p class="business-claim-link"><a href="/register/">Own this organization? Register to claim it.</a></p>
+            @endif
+        @endguest
+        @auth
+            @if ( $business->user_id === 1 ) 
+                <p class="business-claim-link"><a href="/claim/{{$business->id}}" class="js-form-business-claim-open">Claim this organization</a></p>
+            @endif
+        @endauth
 
     </section>
 @endforeach

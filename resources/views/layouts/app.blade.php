@@ -91,13 +91,13 @@
     </header>
 
     @if (Request::is('/'))
-        <main class="content mb-10 flex-grow home-content">
+        <main class="content mb-10 flex-grow home-content js-site-content">
             <div class="container mx-auto">
                 @yield('content')
             </div>
         </main>
     @else
-        <main class="content mb-10 mt-10 flex-grow">
+        <main class="content mb-10 mt-10 flex-grow js-site-content">
             <div class="container mx-auto">
                 @yield('content')
             </div>

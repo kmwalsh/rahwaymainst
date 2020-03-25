@@ -52,8 +52,20 @@ Route::get('/create', 'BusinessController@createBusiness')->name('create');
 Route::post('/create', 'BusinessController@makeBusiness')->name('create');
 
 // update
-Route::post('/update/{id}', 'BusinessController@updateBusiness')->name('update');
+Route::get('/edit/{id}', function (Request $request) {
+    $businesses = Business::where('id', $request->id)->first();
+    return view('edit', [
+        'business' => $businesses,
+        'search'     => false,
+    ]);
+});
+Route::post('/edit/{id}', 'BusinessController@updateBusiness')->name('edit');
+
 Route::post('/status/{id}', 'BusinessController@changeBusinessStatus')->name('status');
+
+// claim
+Route::get('claim/{id?}', 'businessController@claimBusinessForm')->name('claim');
+Route::post('/claim/{id}', 'BusinessController@claimBusiness')->name('claim');
 
 // Authentication Routes...
 Route::get('login', function () {

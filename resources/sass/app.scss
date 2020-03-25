@@ -14,6 +14,7 @@
 @import 'forms';
 @import 'header';
 @import 'footer';
+@import 'button';
 
 // pages
 @import 'home';
@@ -24,7 +25,7 @@
 
 .alert-success 
 {
-    @apply block border-green-600 bg-green-200 text-green-800 p-2 text-xs mt-2 rounded;
+    @apply block border-green-600 bg-green-200 text-green-800 p-2 text-xs mt-2 mb-4 rounded;
 }
 
 .alert-danger,

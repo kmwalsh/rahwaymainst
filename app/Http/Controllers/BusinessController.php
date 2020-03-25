@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Business;
+use App\BusinessClaim;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -108,7 +109,7 @@ class BusinessController extends Controller
         ]);
     
         if ($validator->fails()) {
-            return redirect('/home')
+            return back()
                 ->withInput()
                 ->withErrors($validator);
         }
@@ -144,6 +145,42 @@ class BusinessController extends Controller
 
         $business->save();
     
-        return redirect('/home');        
+        return back();        
+    }
+
+    public function claimBusinessForm(Request $request) {
+        $businesses = Business::where('id', $request->id)->first();
+    
+        return view('claim', [
+            'businesses' => $businesses,
+            'user' => $request->user(),
+        ]);
+    }
+
+    public function claimBusiness(Request $request) {
+
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|max:255',
+            'email' => 'required|max:255',
+            'phone' => 'required|max:25',
+            'comments' => 'required|between:25,255',
+        ]);
+    
+        if ($validator->fails()) {
+            return back()
+                ->withInput()
+                ->withErrors($validator);
+        }
+        
+        $claim = new BusinessClaim;
+        $claim->name = $request->name;
+        $claim->email = $request->email;
+        $claim->phone = $request->phone;
+        $claim->comments = $request->comments;
+
+        $claim->save();
+    
+        return back()->withInput()->with('message', 'Thank you for your business claim request. An administrator will review it and get back to you.');
+
     }
 }

@@ -1,3 +1,33 @@
+//https://davidwalsh.name/javascript-debounce-function
+function debounce(func, wait, immediate) {
+	var timeout;
+	return function() {
+		var context = this, args = arguments;
+		var later = function() {
+			timeout = null;
+			if (!immediate) func.apply(context, args);
+		};
+		var callNow = immediate && !timeout;
+		clearTimeout(timeout);
+		timeout = setTimeout(later, wait);
+		if (callNow) func.apply(context, args);
+	};
+};
+
+//sticky header
+let headerHeight = document.getElementsByClassName('site-header')[0].offsetHeight;
+document.getElementsByClassName('js-site-content')[0].style.paddingTop = headerHeight + "px";
+window.addEventListener('scroll', debounce(checkHeader, 1));
+
+function checkHeader() {
+  let scrollPosition = Math.round(window.scrollY);
+  if (scrollPosition > 100) {
+    document.getElementsByClassName('site-header')[0].classList.add('sticky');
+  }  else {
+      document.getElementsByClassName('site-header')[0].classList.remove('sticky');
+  }
+}
+
 //mobile menu open/close
 let toggler = document.getElementsByClassName('js-navbar-toggler')[0];
 let menu = document.getElementsByClassName('js-navbar-collapse')[0];
@@ -57,7 +87,6 @@ document.onkeydown = function(evt) {
   }
 };
 
-
 function toggleModal () {
   const body = document.querySelector('body')
   const modal = document.querySelector('.modal')
@@ -95,7 +124,5 @@ textarea.forEach(textarea => {
 
   });
 });
-
-//foreach 
 
 //

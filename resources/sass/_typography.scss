@@ -25,10 +25,6 @@ main
         @apply text-xl mb-2 mt-10;
     }
     
-    a:not(.button) {
-        @apply text-blue-600 underline;
-    }
-    
     p {
         @apply mb-2;
     }

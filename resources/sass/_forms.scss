@@ -6,6 +6,11 @@
     {
         @apply mb-4;
     }
+
+    &.form-business-claim
+    {
+        @apply max-w-none shadow-none bg-gray-100;
+    }
 }
 
 .form-header
