@@ -64,7 +64,7 @@ Route::post('/edit/{id}', 'BusinessController@updateBusiness')->name('edit');
 Route::post('/status/{id}', 'BusinessController@changeBusinessStatus')->name('status');
 
 // claim
-Route::get('claim/{id?}', 'businessController@claimBusinessForm')->name('claim');
+Route::get('claim/{id?}', 'BusinessController@claimBusinessForm')->name('claim');
 Route::post('/claim/{id}', 'BusinessController@claimBusiness')->name('claim');
 
 // Authentication Routes...
