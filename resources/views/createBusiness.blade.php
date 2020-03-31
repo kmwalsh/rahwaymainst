@@ -59,7 +59,7 @@
     </fieldset>
     <fieldset>
         <label><span class="form-label">Logo or Promotional Image</span>
-            <input class="form-input" type="file" name="logo">
+            <input class="form-input" type="file" name="logo" accept="image/*">
         </label>
     </fieldset>
     <fieldset>

@@ -115,7 +115,7 @@
             @endif
             <fieldset class="lg:col-span-4">
                 <label class="business-form-logo-upload"><span class="form-label">Replace/Add a Logo or Promo Image</span>
-                    <input class="form-input" type="file" name="logo">
+                    <input class="form-input" type="file" name="logo" accept="image/*">
                 </label>
             </fieldset>
         </section>
