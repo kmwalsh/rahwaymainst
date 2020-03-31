@@ -24,8 +24,9 @@ class SearchController extends Controller
     {
         $q = $request->get( 'q' );
         $business = Business::where('name','LIKE','%'.$q.'%')
+                              ->where('approved','=','1')
                               ->orWhere('description','LIKE','%'.$q.'%')
-                              ->orWhere('hours','LIKE','%'.$q.'%')->paginate(10);        
+                              ->orWhere('hours','LIKE','%'.$q.'%')->paginate(10);
         if(count($business) > 0)
             return view('list',[
                 'businesses' => $business,
