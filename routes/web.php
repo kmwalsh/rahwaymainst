@@ -18,9 +18,11 @@ use Illuminate\Http\Request;
 
 Route::get('/', function () {
     $businesses = Business::where('approved', '1')->orderBy('created_at', 'asc')->paginate(10);
+    $randomBusinesses = Business::inRandomOrder()->limit(1)->get();
 
     return view('list', [
         'businesses'        => $businesses,
+        'randomBusinesses'  => $randomBusinesses,
         'search'            => false,
         'page'              => 'page-home'
     ]);

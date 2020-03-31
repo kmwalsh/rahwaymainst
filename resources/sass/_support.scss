@@ -1,11 +1,21 @@
-.support-local
+.section-block
 {
-    @apply bg-gray-100 pt-8 pb-8 mt-10 mb-0;
+    @apply pt-8 pb-8;
 }
 
-.support-local-header
+.support-local
 {
-    @apply font-hairline text-4xl text-center mt-4 mb-8 text-teal-900;
+    @apply bg-gray-100 mt-10 mb-0;
+}
+
+.section-header
+{
+    @apply font-hairline text-4xl text-center mt-4 mb-4 text-teal-900;
+}
+
+.section-description
+{
+    @apply text-center mb-12 text-teal-900;
 }
 
 .support-wrapper
