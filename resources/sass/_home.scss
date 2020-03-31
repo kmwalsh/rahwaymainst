@@ -1,3 +1,16 @@
+.page-home
+{
+    .site-content
+    {
+        @apply mb-0;
+    }
+
+    .site-footer
+    {
+        @apply mt-0;
+    }
+}
+
 // homepage
 .home-hero
 {

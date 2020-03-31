@@ -24,7 +24,7 @@
 
 .business-list-count
 {
-    @apply text-base text-right font-hairline mb-6 text-gray-700;
+    @apply text-base text-right font-light mb-6 text-gray-700;
 }
 
 .business-list-name
@@ -39,7 +39,7 @@
 
 .business-description
 {
-    @apply mb-4 text-base font-light;
+    @apply mb-4 text-base font-light text-gray-700;
 }
 
 .business-contact
@@ -47,17 +47,19 @@
     @apply mb-2 mt-8;
     
     @include media(">=desktop") {
-        @apply  flex flex-row ;
+        @apply flex flex-row content-center;
     }
 }
 
 .business-list-button
 {
-    @apply inline-block bg-blue-700 text-base font-light text-white py-2 px-4 rounded;
+    @apply inline-block bg-blue-700 text-base font-light text-white py-2 px-4 rounded mr-3;
+    transition: 150ms linear all;
 
     &:hover {
         @apply bg-blue-900 text-white;
     }
+    
     &:focus {
         @apply outline-none shadow-outline;
     }
@@ -69,10 +71,15 @@
 
 .business-location
 {
-    @apply mb-4 text-sm text-gray-700;
+    @apply text-sm text-gray-700 font-light;
 
     a {
-        @apply text-gray-700;
+        @apply text-gray-700 bg-transparent;
+
+        &:hover, &:focus 
+        {
+            @apply bg-transparent text-blue-900 underline;
+        }
     }
 }
 

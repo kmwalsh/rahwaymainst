@@ -17,8 +17,10 @@ body {
     }
 }
 
-main
+.site-content
 {
+    @apply mb-10 flex-grow;
+
     @include media("<=1024px")
     {
         max-width: 90%;

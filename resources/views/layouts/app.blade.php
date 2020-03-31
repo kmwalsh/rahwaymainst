@@ -44,7 +44,7 @@
     </script>
 
 </head>
-<body class="site flex flex-col min-h-screen">
+<body class="site flex flex-col min-h-screen {{ $page ?? '' }}">
     <header class="site-header">
         <div class="site-header-container container mx-auto">
             <div class="site-header-branding">
@@ -91,13 +91,13 @@
     </header>
 
     @if (Request::is('/'))
-        <main class="content mb-10 flex-grow home-content js-site-content">
+        <main class="content site-content home-content js-site-content">
             <div class="container mx-auto">
                 @yield('content')
             </div>
         </main>
     @else
-        <main class="content mb-10 mt-10 flex-grow js-site-content">
+        <main class="content site-content js-site-content">
             <div class="container mx-auto">
                 @yield('content')
             </div>

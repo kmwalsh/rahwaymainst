@@ -20,6 +20,7 @@ Route::get('/', function () {
     return view('list', [
         'businesses'        => $businesses,
         'search'            => false,
+        'page'              => 'page-home'
     ]);
 });
 

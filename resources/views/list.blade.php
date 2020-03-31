@@ -23,7 +23,9 @@
 </section>
 @endif
 
+<!-- reopen full width -->
 <div class="container mx-auto home-content-inner">
+
 <!-- Current businesses -->
 @if (count($businesses) > 0)
 
@@ -69,22 +71,23 @@
         @if ( $business->phone || $business->store )
             <section class="business-contact">
                 @if ( $business->phone )
-                    <section class="phone mb-3 mr-2">
+                    <section class="phone">
                         <a class="button business-list-button" href="tel:{{ \App\Http\Controllers\BusinessController::formatPhoneForDialing($business->phone) }}"><i class="icon-phone mr-1"></i> {{ \App\Http\Controllers\BusinessController::formatPhone($business->phone) }}</a>
                     </section>
                 @endif
 
                 @if ( $business->store )
-                    <section class="store mb-3">
-                        <a target="_blank" rel="noopener" class="button business-list-button" href="{{ $business->store }}"><i class="icon-shopping-cart mr-1"></i> Shop Online</a>
+                    <section class="store">
+                        <a target="_blank" rel="noopener" class="button business-list-button" href="{{ $business->store }}"><i class="icon-shopping-cart mr-1"></i> Visit &amp; Shop</a>
                     </section>
                 @endif
-            </section>
-        @endif
+                
+                @if ( $business->address )
+                    <section class="business-location">
+                        <a class="button business-list-button" href="https://www.google.com/maps/search/{{ $business->address }}" target="_blank" rel="noopener"><i class="icon-map-marker mr-1"></i> {{ $business->address }}</a>
+                    </section>
+                @endif
 
-        @if ( $business->address )
-            <section class="business-location">
-                <i class="icon-map-marker mr-1"></i> <a href="https://www.google.com/maps/search/{{ $business->address }}" target="_blank" rel="noopener">{{ $business->address }}</a>
             </section>
         @endif
 
@@ -161,6 +164,49 @@
 
 @if ($businesses->hasPages())
     {{ $businesses->links() }}
+@endif
+
+</div> <!-- container end for full-width --> 
+
+@if ((($search) !== true) && ( $businesses->currentPage() === 1 ))
+    <section class="support-local">
+        <div class="container mx-auto">
+            <h2 class="support-local-header">How to Support Rahway Local Businesses</h2>
+
+            <div class="support-wrapper">
+                <div class="support-box">
+                    <span class="support-graphic"><i class="icon-globe"></i></span>
+                    <span class="support-label">Online Ordering</span>
+                    <p class="support-description">Several Rahway businesses have shifted to online operations. You can even get <strong>same-day drop-off shipping</strong> from some Rahway businesses.</p>
+                </div>
+                <div class="support-box">
+                    <span class="support-graphic"><i class="icon-truck"></i></span>
+                    <span class="support-label">Food Delivery &amp; Carry-Out</span>
+                    <p class="support-description">Numerous Rahway restaurants have enabled home delivery as well as take-out options. You can even purchase <strong>alcohol packages</strong> for home delivery.</p>
+                </div>
+                <div class="support-box">
+                    <span class="support-graphic"><i class="icon-gift"></i></span>
+                    <span class="support-label">Gift Cards</span>
+                    <p class="support-description">Gift cards are a great way to help our local businesses out. Many Rahway businesses are offering <strong>gift card sales</strong> &mdash; there are some great deals right now!</p>
+                </div>
+                <div class="support-box">
+                    <span class="support-graphic"><i class="icon-eye"></i></span>
+                    <span class="support-label">Watch Virtual Classes &amp; Livestreams</span>
+                    <p class="support-description">Even if you can't attend your yoga, karate, or exercise class in person, numerous Rahway organizations have shifted to <strong>live-streamed, virtual</strong> classes and meet-ups.</p>
+                </div>
+                <div class="support-box">
+                    <span class="support-graphic"><i class="icon-comments-o"></i></span>
+                    <span class="support-label">Leave Online Reviews</span>
+                    <p class="support-description">Leave positive reviews for our Rahway businesses. <strong>Google reviews</strong> are great, but <strong>Facebook reviews</strong> are just as wonderful.</p>
+                </div>
+                <div class="support-box">
+                    <span class="support-graphic"><i class="icon-mail-forward"></i></span>
+                    <span class="support-label">Share on Social</span>
+                    <p class="support-description">Share Rahway businesses and organizations on your personal social media feeds. Facebook likes and Twitter retweets can help get the word out!</p>
+                </div>
+            </div>
+        </div>
+    </section>
 @endif
 
 @endsection

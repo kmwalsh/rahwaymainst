@@ -13995,10 +13995,6 @@ video {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-map-marker:before {
-  content: "\E909";
-}
-
 .icon-hourglass:before {
   content: "\E900";
 }
@@ -14049,6 +14045,38 @@ video {
 
 .icon-reorder:before {
   content: "\E908";
+}
+
+.icon-eye:before {
+  content: "\E909";
+}
+
+.icon-comments-o:before {
+  content: "\E90A";
+}
+
+.icon-mail-forward:before {
+  content: "\E90B";
+}
+
+.icon-share:before {
+  content: "\E90B";
+}
+
+.icon-globe:before {
+  content: "\E90C";
+}
+
+.icon-truck:before {
+  content: "\E90D";
+}
+
+.icon-gift:before {
+  content: "\E90E";
+}
+
+.icon-map-marker:before {
+  content: "\E90F";
 }
 
 .search-input input {
@@ -14147,17 +14175,22 @@ body.no-scroll {
   overflow-y: hidden;
 }
 
+.site-content {
+  margin-bottom: 2.5rem;
+  flex-grow: 1;
+}
+
 @media (max-width: 1024px) {
-  main {
+  .site-content {
     max-width: 90%;
     margin: 0 auto;
   }
 
-  main.home-content {
+  .site-content.home-content {
     max-width: none;
   }
 
-  main .home-content-inner {
+  .site-content .home-content-inner {
     max-width: 90%;
     margin: 0 auto;
   }
@@ -14666,6 +14699,7 @@ body.no-scroll {
   flex-direction: row;
   align-content: center;
   justify-content: center;
+  margin-bottom: 2.5rem;
 }
 
 .pagination .page-item {
@@ -14726,6 +14760,14 @@ body.no-scroll {
   background-color: #f7fafc;
   color: #a0aec0;
   border-color: #a0aec0;
+}
+
+.page-home .site-content {
+  margin-bottom: 0;
+}
+
+.page-home .site-footer {
+  margin-top: 0;
 }
 
 .home-hero {
@@ -14840,7 +14882,7 @@ body.no-scroll {
 .business-list-count {
   font-size: 1rem;
   text-align: right;
-  font-weight: 100;
+  font-weight: 300;
   margin-bottom: 1.5rem;
   color: #4a5568;
 }
@@ -14861,6 +14903,7 @@ body.no-scroll {
   margin-bottom: 1rem;
   font-size: 1rem;
   font-weight: 300;
+  color: #4a5568;
 }
 
 .business-contact {
@@ -14872,6 +14915,7 @@ body.no-scroll {
   .business-contact {
     display: flex;
     flex-direction: row;
+    align-content: center;
   }
 }
 
@@ -14886,6 +14930,8 @@ body.no-scroll {
   padding-left: 1rem;
   padding-right: 1rem;
   border-radius: 0.25rem;
+  margin-right: 0.75rem;
+  transition: 150ms linear all;
 }
 
 .business-list-button:hover {
@@ -14905,13 +14951,20 @@ body.no-scroll {
 }
 
 .business-location {
-  margin-bottom: 1rem;
   font-size: 0.875rem;
   color: #4a5568;
+  font-weight: 300;
 }
 
 .business-location a {
   color: #4a5568;
+  background-color: transparent;
+}
+
+.business-location a:hover, .business-location a:focus {
+  background-color: transparent;
+  color: #2a4365;
+  text-decoration: underline;
 }
 
 .business-hours {
@@ -15123,6 +15176,67 @@ body.no-scroll {
 
 .business-dashboard-actions a:hover, .business-dashboard-actions a:focus, .business-dashboard-actions form:hover, .business-dashboard-actions form:focus {
   color: #2a4365;
+}
+
+.support-local {
+  background-color: #f7fafc;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  margin-top: 2.5rem;
+  margin-bottom: 0;
+}
+
+.support-local-header {
+  font-weight: 100;
+  font-size: 2.25rem;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  color: #234e52;
+}
+
+.support-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.support-box {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 0;
+  width: 33.333333%;
+  justify-content: flex-start;
+  align-content: center;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: #234e52;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  position: relative;
+  min-height: 150px;
+}
+
+.support-graphic {
+  color: #e2e8f0;
+  font-size: 10rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  z-index: 1;
+}
+
+.support-label {
+  font-size: 1.5rem;
+  font-weight: 100;
+  margin-bottom: 0.5rem;
+  z-index: 2;
+}
+
+.support-description {
+  color: #234e52;
+  z-index: 2;
 }
 
 .alert-success {

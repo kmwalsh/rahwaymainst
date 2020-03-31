@@ -25,9 +25,6 @@
     -moz-osx-font-smoothing: grayscale;
   }
   
-  .icon-map-marker:before {
-    content: "\e909";
-  }
   .icon-hourglass:before {
     content: "\e900";
   }
@@ -66,4 +63,29 @@
   }
   .icon-reorder:before {
     content: "\e908";
-  }  
+  }
+  .icon-eye:before {
+    content: "\e909";
+  }
+  .icon-comments-o:before {
+    content: "\e90a";
+  }
+  .icon-mail-forward:before {
+    content: "\e90b";
+  }
+  .icon-share:before {
+    content: "\e90b";
+  }
+  .icon-globe:before {
+    content: "\e90c";
+  }
+  .icon-truck:before {
+    content: "\e90d";
+  }
+  .icon-gift:before {
+    content: "\e90e";
+  }
+  .icon-map-marker:before {
+    content: "\e90f";
+  }
+  
