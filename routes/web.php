@@ -18,8 +18,8 @@ Route::get('/', function () {
     $businesses = Business::where('approved', '1')->orderBy('created_at', 'asc')->paginate(10);
 
     return view('list', [
-        'businesses' => $businesses,
-        'search'     => false,
+        'businesses'        => $businesses,
+        'search'            => false,
     ]);
 });
 
@@ -52,13 +52,7 @@ Route::get('/create', 'BusinessController@createBusiness')->name('create');
 Route::post('/create', 'BusinessController@makeBusiness')->name('create');
 
 // update
-Route::get('/edit/{id}', function (Request $request) {
-    $businesses = Business::where('id', $request->id)->first();
-    return view('edit', [
-        'business' => $businesses,
-        'search'     => false,
-    ]);
-});
+Route::get('/edit/{id}', 'BusinessController@editBusiness');
 Route::post('/edit/{id}', 'BusinessController@updateBusiness')->name('edit');
 
 Route::post('/status/{id}', 'BusinessController@changeBusinessStatus')->name('status');

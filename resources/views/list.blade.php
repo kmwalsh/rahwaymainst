@@ -7,7 +7,7 @@
 
 </div> <!-- container end for full-width --> 
 
-@if (($search) !== true )
+@if ((($search) !== true) && ( $businesses->currentPage() === 1 ))
 <section class="home-hero">
     <div class="container mx-auto">
         <div class="home-hero-container">
@@ -30,7 +30,7 @@
 <form action="/search" method="POST" role="search">
     {{ csrf_field() }}
     <div class="search-input search-home">
-        <input type="text" class="search-input" name="q" placeholder="Search Rahway businesses, organizations, freelancers, places of worship..."> <span class="input-group-btn">
+        <input type="text" class="search-input" name="q" placeholder="Search Rahway businesses, organizations, freelancers, places of worship..." value="{{ $q ?? '' }}"> <span class="input-group-btn">
             <button type="submit" class="btn btn-default">
                 <i class="icon-search"></i>
             </button>
@@ -39,6 +39,15 @@
 </form>
 
 <section class="business-list" id="business-list">
+
+@if (($search) !== true && ($businesses->currentPage() === 1)) 
+    <section class="business-list-count"><strong>{{$businesses->total()}}</strong> Rahway-local organizations</section>
+@endif
+
+@if (($search) == true)
+    <section class="business-list-count"><strong>{{$businesses->total()}}</strong> Rahway-local organizations related to your search <strong>"{{$q}}"</strong></section>
+@endif
+
 <section class="business-list-businesses">
 @foreach ($businesses as $business)
     <section class="standard-box">
@@ -53,7 +62,7 @@
 
         @if ( $business->description )
             <section class="business-description">
-                {{ $business->description }}
+                {!! nl2br(e($business->description)) !!}
             </section>
         @endif
 
@@ -82,7 +91,7 @@
         @if ( $business->hours )
             <section class="business-hours">
                 <h3 class="business-hours-header">Special Hours &amp; Procedures</h3>
-                {{ $business->hours }}
+                {!! nl2br(e($business->hours)) !!}
             </section>
         @endif
 
@@ -149,7 +158,6 @@
 </section>
 </section>
 @endif
-
 
 @if ($businesses->hasPages())
     {{ $businesses->links() }}

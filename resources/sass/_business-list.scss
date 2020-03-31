@@ -22,6 +22,11 @@
     }
 }
 
+.business-list-count
+{
+    @apply text-base text-right font-hairline mb-6 text-gray-700;
+}
+
 .business-list-name
 {
     @apply mt-0 mb-1 text-2xl;

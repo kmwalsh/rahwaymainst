@@ -101,6 +101,14 @@ class BusinessController extends Controller
         return redirect('/home');
     }
 
+    public function editBusiness(Request $request) {
+        $businesses = Business::where('id', $request->id)->first();
+        return view('edit', [
+            'business' => $businesses,
+            'search'     => false,
+        ]);
+    }
+
     public function updateBusiness(Request $request)
     {
         $validator = Validator::make($request->all(), [

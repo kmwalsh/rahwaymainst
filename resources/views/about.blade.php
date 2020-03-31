@@ -11,7 +11,7 @@
         <h2>Credit</h2>
         <p>Thank you <a href="https://laravel.com/" target="_blank">Laravel</a>, <a href="https://tailwindcss.com" target="_blank">Tailwind CSS</a>, &amp; <a href="https://www.tailwindtoolbox.com/" target="_blank">Tailwind Toolbox</a>.</p>
 
-        <p>RMS is hosted by <a href="https://m.do.co/c/af79114d1ab2">DigitalOcean</a>, with domain by <a href="https://namecheap.pxf.io/c/1234756/386170/5618">Namecheap</a>.</p>
+        <p>Rahway Main St. is hosted by <a href="https://m.do.co/c/af79114d1ab2">DigitalOcean</a>, with domain by <a href="https://namecheap.pxf.io/c/1234756/386170/5618">Namecheap</a>.</p>
     </section>
     <section class="rms-contact">
         <form method="POST" class="form-wrapper" action="contact">
@@ -36,7 +36,7 @@
                     <span class="counter">0</span>/<span class="maxlength">0</span>
                     <span class="counter-error"></span>
                 </span>
-                <p class="form-description">Please note, <b>we cannot answer any specific questions about any listing on RMS.</b> If you have a question about a business or organization's hours or special procedures, please try to reach out directly to that business.</p>
+                <p class="form-description">Please note, <b>we cannot answer any specific questions about any listing.</b> If you have a question about a business or organization's hours or special procedures, please try to reach out directly to that business.</p>
                 </label>
             </fieldset>
             <fieldset>

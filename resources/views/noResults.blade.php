@@ -13,7 +13,7 @@
     <div class="search-input">
         <input type="text" class="shadow-lg border border-gray-200 rounded-md p-5 mb-10" name="q" placeholder="Search businesses" value="{{ $q }}"> <span class="input-group-btn">
             <button type="submit" class="btn btn-default">
-                <i class="fa fa-search"></i>
+                <i class="icon-search"></i>
             </button>
         </span>
     </div>

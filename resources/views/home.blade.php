@@ -9,7 +9,7 @@
     </div>
 @endif
 
-<div class="mb-10 shadow border border-gray-300 p-2 rounded text-sm text-green-600 bg-green-100">You are logged in! @if( $superadmin )
+<div class="alert alert-success">You are logged in! @if( $superadmin )
 You are a super-administrator.
 @endif</div>
 

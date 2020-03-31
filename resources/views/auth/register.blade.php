@@ -57,6 +57,7 @@
                 {{ __('Register') }}
             </button>
         </fieldset>
+        <p class="register-no-account-text">Already have an account? <a href="/login">Log in</a></p>
     </form>
 </section>
 <section class="register-grid-info">
