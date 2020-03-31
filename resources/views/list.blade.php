@@ -43,7 +43,7 @@
 <section class="business-list" id="business-list">
 
 @if (($search) !== true && ($businesses->currentPage() === 1)) 
-    <section class="business-list-count"><strong>{{$businesses->total()}}</strong> Rahway-local organizations</section>
+    <section class="business-list-count"><strong>{{$businesses->total()}}</strong> Rahway local organizations</section>
 @endif
 
 @if (($search) == true)
@@ -202,7 +202,7 @@
                 <div class="support-box">
                     <span class="support-graphic"><i class="icon-mail-forward"></i></span>
                     <span class="support-label">Share on Social</span>
-                    <p class="support-description">Share Rahway businesses and organizations on your personal social media feeds. Facebook likes and Twitter retweets can help get the word out!</p>
+                    <p class="support-description">Share Rahway businesses and organizations on your <strong>personal social media feeds</strong>. Facebook likes and Twitter retweets can help get the word out!</p>
                 </div>
             </div>
         </div>

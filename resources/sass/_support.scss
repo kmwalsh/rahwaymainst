@@ -10,14 +10,20 @@
 
 .support-wrapper
 {
-    @apply flex flex-row flex-wrap;
+    @include media(">=desktop") {
+        @apply flex flex-row flex-wrap;
+    }
 }
 
 .support-box
 {
-    @apply flex flex-col flex-grow-0 w-1/3 justify-start content-center text-center mb-10 text-teal-900 px-2;
+    @apply flex flex-col flex-grow-0 justify-start content-center text-center mb-10 text-teal-900 px-2;
     position: relative;
     min-height: 150px;
+    
+    @include media(">=desktop") {
+        @apply w-1/3;
+    }
 }
 
 .support-graphic

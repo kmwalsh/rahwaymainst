@@ -14680,6 +14680,7 @@ body.no-scroll {
   padding-left: 1rem;
   padding-right: 1rem;
   border-radius: 0.25rem;
+  transition: 150ms linear all;
 }
 
 .button:focus {
@@ -14697,6 +14698,7 @@ body.no-scroll {
   list-style-type: none;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-content: center;
   justify-content: center;
   margin-bottom: 2.5rem;
@@ -14713,6 +14715,7 @@ body.no-scroll {
   border-width: 1px;
   background-color: #e2e8f0;
   border-color: #2c7a7b;
+  margin-bottom: 0.5rem;
   transition: 300ms linear all;
 }
 
@@ -14730,9 +14733,16 @@ body.no-scroll {
 }
 
 .pagination .page-item:first-child, .pagination .page-item:last-child {
+  display: none;
   border-style: none;
   box-shadow: none;
   background-color: transparent;
+}
+
+@media (min-width: 1024px) {
+  .pagination .page-item:first-child, .pagination .page-item:last-child {
+    display: block;
+  }
 }
 
 .pagination .page-item:hover, .pagination .page-item:active, .pagination .page-item:focus {
@@ -14931,6 +14941,7 @@ body.no-scroll {
   padding-right: 1rem;
   border-radius: 0.25rem;
   margin-right: 0.75rem;
+  margin-bottom: 0.75rem;
   transition: 150ms linear all;
 }
 
@@ -14947,6 +14958,7 @@ body.no-scroll {
 @media (min-width: 1024px) {
   .business-list-button {
     display: inline-block;
+    margin-bottom: 0;
   }
 }
 
@@ -14958,13 +14970,24 @@ body.no-scroll {
 
 .business-location a {
   color: #4a5568;
-  background-color: transparent;
+  background-color: #f7fafc;
 }
 
 .business-location a:hover, .business-location a:focus {
-  background-color: transparent;
-  color: #2a4365;
-  text-decoration: underline;
+  background-color: #f7fafc;
+  color: #4a5568;
+}
+
+@media (min-width: 1024px) {
+  .business-location a {
+    background-color: transparent;
+  }
+
+  .business-location a:hover, .business-location a:focus {
+    background-color: transparent;
+    color: #1a202c;
+    text-decoration: underline;
+  }
 }
 
 .business-hours {
@@ -15195,17 +15218,18 @@ body.no-scroll {
   color: #234e52;
 }
 
-.support-wrapper {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+@media (min-width: 1024px) {
+  .support-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
 
 .support-box {
   display: flex;
   flex-direction: column;
   flex-grow: 0;
-  width: 33.333333%;
   justify-content: flex-start;
   align-content: center;
   text-align: center;
@@ -15215,6 +15239,12 @@ body.no-scroll {
   padding-right: 0.5rem;
   position: relative;
   min-height: 150px;
+}
+
+@media (min-width: 1024px) {
+  .support-box {
+    width: 33.333333%;
+  }
 }
 
 .support-graphic {

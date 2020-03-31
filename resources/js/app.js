@@ -14,10 +14,22 @@ function debounce(func, wait, immediate) {
 	};
 };
 
-//sticky header
-let headerHeight = document.getElementsByClassName('site-header')[0].offsetHeight;
-document.getElementsByClassName('js-site-content')[0].style.paddingTop = headerHeight + "px";
-window.addEventListener('scroll', debounce(checkHeader, 1));
+//get the sticky header size on load or when user resizes window
+//we hide some header elements on mobile so we catch the resize event
+//in case the user switches portrait/landscape
+window.addEventListener('DOMContentLoaded', stickyHeader);
+window.addEventListener('resize', debounce(stickyHeader, 100));
+
+function stickyHeader() {
+  console.log("????");
+  let headerHeight = 0;
+  //sticky header
+  headerHeight = document.getElementsByClassName('site-header')[0].offsetHeight;
+  document.getElementsByClassName('js-site-content')[0].style.paddingTop = headerHeight + "px";
+}
+
+// add the sticky class when the user has scrolled a little bit
+window.addEventListener('scroll', debounce(checkHeader, 100));
 
 function checkHeader() {
   let scrollPosition = Math.round(window.scrollY);
