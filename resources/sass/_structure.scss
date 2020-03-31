@@ -19,7 +19,12 @@ body {
 
 .site-content
 {
-    @apply mb-10 flex-grow;
+    @apply mt-10 mb-10 flex-grow;
+
+    &.home-content
+    {
+        @apply mt-0;
+    }
 
     @include media("<=1024px")
     {

@@ -9,9 +9,10 @@
     @csrf
     
     <h2 class="form-header">Open on Rahway Main St.</h2>
-    <ul>
+    <ul class="mb-8">
         <li><b>Post your own businesses, freelance hours, organizations, etc.</b> Do not post for anyone else.</li>
-        <li>All posts are verified  before going public. Rahway Main St. will try to verify by internet, but you may receive an e-mail or phone call.</li>
+        <li>Your business may already be posted with data taken from websites or Facebook posts. You can claim existing listings, but you're also welcome to start fresh.</li>
+        <li>All posts are verified before going public. Rahway Main St. will try to verify by internet, but you may receive an e-mail or phone call.</li>
     </ul>
 
     <fieldset>

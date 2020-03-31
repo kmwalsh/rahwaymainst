@@ -43,8 +43,11 @@ You are a super-administrator.
     </section>
 @else 
 
-<p>You have not created any Rahway Main St. listings yet.</p>
+<h2>No Rahway Main St. organizations created.</h2>
+<p class="mb-8">You have not created any Rahway Main St. organization listings yet. You can create one now, or you can browse existing listings to see if yours already exists and can be claimed.</p>
+
 <a class="button form-button" href="/create">Create a Listing</a>
+<a class="button form-button" href="/">Browse Listings</a>
 
 @endif
 

@@ -18,6 +18,7 @@
 
 <h2>News</h2>
 <ul>
+<li><a target="_blank" rel="noopener" href="https://www.facebook.com/MayorRaymondGiacobbe/">Mayor Raymond Giacobbe</a></li>
 <li><a target="_blank" rel="noopener" href="http://www.rahwayrising.com/">Rahway Rising</a></li>
 <li><a target="_blank" rel="noopener" href="https://rennamedia.com/publications/our-town-rahway/">Our Town Rahway</a></li>
 </ul>
