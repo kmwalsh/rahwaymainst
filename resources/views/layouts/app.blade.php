@@ -52,7 +52,7 @@
                 <h2 class="branding-tagline">A digital main street for Rahway, New Jersey.</h2>
             </div>
             <div class="nav-mobile-wrapper">
-                <button class="js-navbar-toggler navbar-toggler">
+                <button aria-label="Menu" class="js-navbar-toggler navbar-toggler">
                 <i class="icon-bars"></i>
                 </button>
             </div>

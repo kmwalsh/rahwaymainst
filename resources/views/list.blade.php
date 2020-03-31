@@ -32,10 +32,11 @@
 <form action="/search" method="POST" role="search">
     {{ csrf_field() }}
     <div class="search-input search-home">
+        <label class="hidden" aria-label="Search">Search</label>
         <input type="text" class="search-input" name="q" placeholder="Search Rahway businesses, organizations, freelancers, places of worship..." value="{{ $q ?? '' }}"> <span class="input-group-btn">
-            <button type="submit" class="btn btn-default">
-                <i class="icon-search"></i>
-            </button>
+        <button aria-label="Search" type="submit" class="btn btn-default">
+            <i class="icon-search"></i>
+        </button>
         </span>
     </div>
 </form>
@@ -104,7 +105,7 @@
 
         @if ($business->logo )
             <div class="flex-left business-logo-wrapper">
-                <a target="_blank" rel="noopener" class="modal-open" href="/storage/{{ $business->logo }} "><img class="business-logo-image" src="/storage/{{ $business->logo }}" /></a>
+                <a target="_blank" rel="noopener" class="modal-open" href="/storage/{{ $business->logo }} "><span class="screen-reader-text">{{$business->name}}</span><img alt="{{$business->name}}" class="business-logo-image" src="/storage/{{ $business->logo }}" /></a>
             </div>
 
             <div class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center">
@@ -133,7 +134,7 @@
 
                     <!--Footer-->
                     <div class="flex justify-end pt-2">
-                    <button class="modal-close button bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Close</button>
+                    <button aria-label="close" class="modal-close button bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Close</button>
                     </div>
                     
                 </div>

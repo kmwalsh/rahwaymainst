@@ -21,7 +21,6 @@ window.addEventListener('DOMContentLoaded', stickyHeader);
 window.addEventListener('resize', debounce(stickyHeader, 100));
 
 function stickyHeader() {
-  console.log("????");
   let headerHeight = 0;
   //sticky header
   headerHeight = document.getElementsByClassName('site-header')[0].offsetHeight;
