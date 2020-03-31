@@ -14,6 +14,8 @@ use Illuminate\Http\Request;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//Route::get('sitemap', 'SitemapController@generate')->name('sitemap');
+
 Route::get('/', function () {
     $businesses = Business::where('approved', '1')->orderBy('created_at', 'asc')->paginate(10);
 
