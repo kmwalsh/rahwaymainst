@@ -70,7 +70,7 @@
             <section class="business-contact">
                 @if ( $business->phone )
                     <section class="phone mb-3 mr-2">
-                        <a class="button business-list-button" href="tel:{{ $business->phone }}"><i class="icon-phone mr-1"></i> {{ $business->phone }}</a>
+                        <a class="button business-list-button" href="tel:{{ \App\Http\Controllers\BusinessController::formatPhoneForDialing($business->phone) }}"><i class="icon-phone mr-1"></i> {{ \App\Http\Controllers\BusinessController::formatPhone($business->phone) }}</a>
                     </section>
                 @endif
 

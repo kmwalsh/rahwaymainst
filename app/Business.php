@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Business extends Model
 {
-    //
     /**
      * Get the user that owns the business.
      */

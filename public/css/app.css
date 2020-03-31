@@ -14679,17 +14679,20 @@ body.no-scroll {
   border-width: 1px;
   background-color: #e2e8f0;
   border-color: #2c7a7b;
+  transition: 300ms linear all;
+}
+
+.pagination .page-item a,
+.pagination .page-item span.page-link {
   height: 3rem;
   width: 3rem;
   display: flex;
   align-content: center;
   justify-content: center;
-  transition: 300ms linear all;
 }
 
 .pagination .page-item a {
   color: #2c7a7b;
-  display: block;
 }
 
 .pagination .page-item:first-child, .pagination .page-item:last-child {

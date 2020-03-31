@@ -11,12 +11,18 @@
         margin: 0;
         padding: 0;
 
-        @apply text-3xl text-teal-700 mr-4 shadow-sm rounded-full border bg-gray-300 border-teal-700 h-12 w-12 flex content-center justify-center;
+        @apply text-3xl text-teal-700 mr-4 shadow-sm rounded-full border bg-gray-300 border-teal-700;
 
         transition: 300ms linear all;
 
+        a,
+        span.page-link
+        {
+            @apply h-12 w-12 flex content-center justify-center;
+        }
+
         a {
-            @apply text-teal-700 block;
+            @apply text-teal-700;
         }
 
         &:first-child,

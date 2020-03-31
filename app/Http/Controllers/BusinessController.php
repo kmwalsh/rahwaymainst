@@ -52,11 +52,12 @@ class BusinessController extends Controller
     public function makeBusiness(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'name' => 'required|max:255',
-            'description' => 'required|max:255',
-            'phone' => 'required|max:20',
-            'hours' => 'required|max:1000',
-            'address' => 'required|max:255',
+            'name'          => 'required|max:255',
+            'description'   => 'required|max:255',
+            'phone'         => 'required|max:20',
+            'hours'         => 'required|max:1000',
+            'address'       => 'required|max:255',
+            'logo'          => 'mimes:jpeg,jpg,bmp,png,webp'
         ]);
     
         if ($validator->fails()) {
@@ -112,11 +113,12 @@ class BusinessController extends Controller
     public function updateBusiness(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'name' => 'required|max:255',
-            'description' => 'required|max:255',
-            'phone' => 'required|max:20',
-            'hours' => 'required|max:1000',
-            'address' => 'required|max:255',
+            'name'          => 'required|max:255',
+            'description'   => 'required|max:255',
+            'phone'         => 'required|max:20',
+            'hours'         => 'required|max:1000',
+            'address'       => 'required|max:255',
+            'logo'          => 'mimes:jpeg,jpg,bmp,png,webp'
         ]);
     
         if ($validator->fails()) {
@@ -193,5 +195,32 @@ class BusinessController extends Controller
     
         return back()->withInput()->with('message', 'Thank you for your business claim request. An administrator will review it and get back to you.');
 
+    }
+
+    // there are libraries that handle phone number formatting for international etc.
+    // this is honestly good enough for now, don't need to install packages or anything
+    // all phone numbers will be the standard US format anyways because hyperlocal site
+    public static function formatPhone($number) {
+        // Allow only Digits, remove all other characters.
+        $number = preg_replace("/[^\d]/","",$number);
+       
+        // get number length.
+        $length = strlen($number);
+       
+       // if number = 10
+       if($length == 10) {
+        $number = preg_replace("/^1?(\d{3})(\d{3})(\d{4})$/", "$1-$2-$3", $number);
+       }
+        
+        return $number;
+    }
+
+    // there are libraries that handle phone number formatting for international etc.
+    // this is honestly good enough for now, don't need to install packages or anything
+    // all phone numbers will be the standard US format anyways because hyperlocal site
+    public static function formatPhoneForDialing($number) {
+        // Allow only Digits, remove all other characters.
+        $number = preg_replace("/[^\d]/","",$number);
+        return $number;
     }
 }
