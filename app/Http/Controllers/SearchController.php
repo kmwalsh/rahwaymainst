@@ -24,16 +24,18 @@ class SearchController extends Controller
     {
         $q = $request->get( 'q' );
         $business = Business::where('name','LIKE','%'.$q.'%')
-                              ->where('approved','=','1')
-                              ->orWhere('description','LIKE','%'.$q.'%')
-                              ->orWhere('hours','LIKE','%'.$q.'%')->paginate(10);
+                            ->where('approved','=','1')
+                            ->orWhere('description','LIKE','%'.$q.'%')
+                            ->orWhere('hours','LIKE','%'.$q.'%')
+                            ->paginate(10);
+        $business->appends(['q' => $q]);
         if(count($business) > 0)
-            return view('list',[
+            return view('search',[
                 'businesses' => $business,
                 'superadmin' => false,
                 'q'          => $q,
                 'search'     => true,
-            ]);
+            ])->withQuery ( $q );
         else return view ('noResults',[
             'q'          => $q
         ]);
